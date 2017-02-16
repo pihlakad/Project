@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Project {
-    class Program {
-        static void Main(string[] args) {
-            Test.PrintHello();
-            Console.ReadLine();
+    public static class Test {
+        public static void PrintHello() {
+            Console.WriteLine("Hello");
         }
     }
 }
