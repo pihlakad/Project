@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Project {
     public static class Test {
         public static void PrintHello() {
-            Console.WriteLine("Hello");
+            Console.WriteLine("Hello word");
         }
     }
 }

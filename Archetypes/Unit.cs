@@ -1,4 +1,4 @@
 ﻿namespace Archetypes {
-    class Unit {
+    public class Unit {
     }
 }
