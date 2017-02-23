@@ -11,7 +11,7 @@ git pull
 `
 
 Pärast muutuste sisseviimist:
-Team Explorer -> Changes -> enter message -> commit All.
+Team Explorer -> Changes -> enter message -> commit All -> Sync -> Push
 git add -A
 git commit -m "Minu commit"
 git push
