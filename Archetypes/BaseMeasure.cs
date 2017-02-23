@@ -1,0 +1,4 @@
+﻿namespace Archetypes {
+    class BaseMeasure {
+    }
+}
