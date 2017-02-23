@@ -16,3 +16,5 @@ git add -A
 git commit -m "Minu commit"
 git push
 `
+NB! Kuidas Kõik saavad ühised koodistadndardid: ReSharper(ülevalt menüüst) -> Manage Options -> 
+Import and Export(must osa pealt)-> import from file -> valige fail, mis on README kõrval.
