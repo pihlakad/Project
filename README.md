@@ -16,3 +16,6 @@ git add -A
 git commit -m "Minu commit"
 git push
 `
+
+# Licence
+MIT 2017
