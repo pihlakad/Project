@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Properties\BaseMeasure.cs" />
     <Compile Include="SiUnits.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

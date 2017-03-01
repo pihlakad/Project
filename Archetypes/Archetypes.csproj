@@ -49,11 +49,13 @@
     <Compile Include="Metric\MetricInterface.cs" />
     <Compile Include="Metric\MetricSingleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quantity.cs" />
     <Compile Include="SystemOfUnits\SI\Units\Kelvin.cs" />
     <Compile Include="SystemOfUnits\SI\Units\Kilogram.cs" />
     <Compile Include="SystemOfUnits\SI\Units\Meter.cs" />
     <Compile Include="SystemOfUnits\SI\Units\Second.cs" />
     <Compile Include="SystemOfUnits\UnitInterface.cs" />
+    <Compile Include="Types.cs" />
     <Compile Include="Unit.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

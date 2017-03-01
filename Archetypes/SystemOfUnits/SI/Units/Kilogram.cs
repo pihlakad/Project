@@ -2,6 +2,7 @@
     public class Kilogram : IUnit {
         private const string Name = "kilogram";
         private const string Symbol = "kg";
+        private const UnitTypes Type = UnitTypes.Temperature;
 
         public string GetName() {
             return Name;
