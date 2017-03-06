@@ -12,4 +12,35 @@ namespace Tests {
             Assert.AreEqual("kelvin", unit.GetName());
         }
     }
+    [TestClass]
+    public class KilogramTest {
+        [TestMethod]
+        public void Kilogram()
+        {
+            Kilogram unit = new Kilogram();
+
+            Assert.AreEqual("kg", unit.GetSymbol());
+            Assert.AreEqual("kilogram", unit.GetName());
+        }
+    }
+    [TestClass]
+    public class MeterTest {
+        [TestMethod]
+        public void Meter() {
+            Meter unit = new Meter();
+
+            Assert.AreEqual("m", unit.GetSymbol());
+            Assert.AreEqual("meter", unit.GetName());
+        }
+    }
+    [TestClass]
+    public class SecondTest {
+        [TestMethod]
+        public void Second() {
+            Second unit = new Second();
+            
+            Assert.AreEqual("s", unit.GetSymbol());
+            Assert.AreEqual("second", unit.GetName());
+        }
+    }
 }
