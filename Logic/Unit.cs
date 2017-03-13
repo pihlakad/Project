@@ -5,8 +5,8 @@
         private readonly string _name;
         private readonly string _symbol;
         private readonly double _factor;
+        private readonly bool _isNamed;
         private readonly UnitType _unitType;
-        private bool _isNamed;
 
         public Unit(string name, string symbol, UnitType unitType)
             : this(name, symbol, 1.0, unitType, true) {}
@@ -22,29 +22,12 @@
             _isNamed = isNamed;
         }
 
-        public static Unit None {
-            get { return _none; }
-        }
-
-        public string Name {
-            get { return _name; }
-        }
-
-        public string Symbol {
-            get { return _symbol; }
-        }
-
-        public double Factor {
-            get { return _factor; }
-        }
-
-        public UnitType UnitType {
-            get { return _unitType; }
-        }
-
-        public bool IsNamed {
-            get { return _isNamed; }
-        }
+        public static Unit None => _none;
+        public string Name => _name;
+        public string Symbol => _symbol;
+        public double Factor => _factor;
+        public UnitType UnitType => _unitType;
+        public bool IsNamed => _isNamed;
 
         public override string ToString() {
             return Symbol;
@@ -67,16 +50,49 @@
         }
 
         public static Unit operator *(double left, Unit right) {
-            if (left == 1) {
-                return right;
-            }
-
             right = right ?? _none;
 
             return new Unit(
                 string.Concat('(', left.ToString(), '*', right._name, ')'),
                 left.ToString() + '*' + right._symbol, left * right._factor,
                 right._unitType, false
+            );
+        }
+
+        public static Unit operator /(Unit left, Unit right) {
+            left = left ?? _none;
+            right = right ?? _none;
+
+            return new Unit(
+                string.Concat('(', left._name, '/', right._name, ')'),
+                left._symbol + '/' + right._symbol,
+                left._factor / right._factor,
+                left._unitType / right._unitType,
+                false
+            );
+        }
+
+        public static Unit operator /(double left, Unit right) {
+            right = right ?? _none;
+
+            return new Unit(
+                string.Concat('(', left.ToString(), '*', right._name, ')'),
+                left.ToString() + '*' + right._symbol,
+                left / right._factor,
+                right._unitType.Power(-1),
+                false
+            );
+        }
+
+        public static Unit operator /(Unit left, double right) {
+            left = left ?? _none;
+
+            return new Unit(
+                string.Concat('(', left._name, '/', right.ToString(), ')'),
+                left._symbol + '/' + right.ToString(),
+                left._factor / right,
+                left._unitType,
+                false
             );
         }
 

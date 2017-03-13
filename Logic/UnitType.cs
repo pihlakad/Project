@@ -19,6 +19,10 @@ namespace Logic {
             this.baseUnitIndices = new sbyte[indicesLength];
         }
 
+        private UnitType(sbyte[] baseUnitIndices) {
+            this.baseUnitIndices = (sbyte[])baseUnitIndices.Clone();
+        }
+
         public static UnitType None {
             get { return UnitType.none; }
         }
@@ -47,12 +51,34 @@ namespace Logic {
         }
 
         public static UnitType operator *(UnitType left, UnitType right) {
-            UnitType result = new UnitType(Math.Max(left.baseUnitIndices.Length, right.baseUnitIndices.Length));
+            var result = new UnitType(Math.Max(left.baseUnitIndices.Length, right.baseUnitIndices.Length));
 
             left.baseUnitIndices.CopyTo(result.baseUnitIndices, 0);
 
-            for (int i = 0; i < right.baseUnitIndices.Length; i++) {
+            for (var i = 0; i < right.baseUnitIndices.Length; i++) {
                 result.baseUnitIndices[i] += right.baseUnitIndices[i];
+            }
+
+            return result;
+        }
+
+        public static UnitType operator /(UnitType left, UnitType right) {
+            var result = new UnitType(Math.Max(left.baseUnitIndices.Length, right.baseUnitIndices.Length));
+
+            left.baseUnitIndices.CopyTo(result.baseUnitIndices, 0);
+
+            for (var i = 0; i < right.baseUnitIndices.Length; i++) {
+                result.baseUnitIndices[i] -= right.baseUnitIndices[i];
+            }
+
+            return result;
+        }
+
+        public UnitType Power(int power) {
+            var result = new UnitType(baseUnitIndices);
+
+            for (var i = 0; i < result.baseUnitIndices.Length; i++) {
+                result.baseUnitIndices[i] = (sbyte) (result.baseUnitIndices[i] * power);
             }
 
             return result;
