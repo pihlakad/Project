@@ -14,14 +14,6 @@ namespace Logic {
         public double Value => _value;
         public Unit Unit => _unit;
 
-        public Quantity Add(Quantity amount) {
-            return (this + amount);
-        }
-
-        public Quantity DivideBy(Quantity amount) {
-            return (this / amount);
-        }
-
         public static Quantity operator +(Quantity left, Quantity right) {
             if ((left == null) && (right == null)) {
                 return null;
@@ -37,12 +29,25 @@ namespace Logic {
         }
 
         public static Quantity operator /(Quantity left, Quantity right) {
-            if (ReferenceEquals(left, null))
+            if (ReferenceEquals(left, null) || ReferenceEquals(right, null)) {
                 return null;
-            else if (ReferenceEquals(right, null))
+            }
+
+            return new Quantity(
+                left._value / right._value,
+                left._unit / right._unit
+            );
+        }
+
+        public static Quantity operator *(Quantity left, Quantity right) {
+            if (ReferenceEquals(left, null) || ReferenceEquals(right, null)) {
                 return null;
-            else
-                return new Quantity(left._value / right._value, left._unit / right._unit);
+            }
+
+            return new Quantity(
+                left._value * right._value,
+                left._unit * right._unit
+            );
         }
 
         public Quantity ConvertedTo(Unit unit) {

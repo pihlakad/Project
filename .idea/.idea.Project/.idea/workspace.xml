@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cd8ac92d-fe3a-4448-9732-c5225542961b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Logic/UnitConversionKeySlot.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Logic/UnitConversionValueSlot.cs" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Logic/Exception.cs" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Logic/Logic.csproj" afterPath="$PROJECT_DIR$/Logic/Logic.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Logic/Quantity.cs" afterPath="$PROJECT_DIR$/Logic/Quantity.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Logic/Unit.cs" afterPath="$PROJECT_DIR$/Logic/Unit.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Logic/UnitManager.cs" afterPath="$PROJECT_DIR$/Logic/UnitManager.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Logic/UnitType.cs" afterPath="$PROJECT_DIR$/Logic/UnitType.cs" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="SIUnits.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/SIUnits.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <marker date="1489514909000" expanded="true" signature="69:129" ph="{...}" />
+                <marker date="1489514909000" expanded="true" signature="112:127" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Unit.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logic/Unit.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1003">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1489515780000" expanded="true" signature="16:3360" ph="{...}" />
+                <marker date="1489515780000" expanded="true" signature="47:3358" ph="{...}" />
+                <marker date="1489515780000" expanded="true" signature="721:884" ph="{...}" />
+                <marker date="1489515780000" expanded="true" signature="1178:1216" ph="{...}" />
+                <marker date="1489515780000" expanded="true" signature="1281:1327" ph="{...}" />
+                <marker date="1489515780000" expanded="true" signature="1390:1740" ph="{...}" />
+                <marker date="1489515780000" expanded="true" signature="1805:2067" ph="{...}" />
+                <marker date="1489515780000" expanded="true" signature="2130:2497" ph="{...}" />
+                <marker date="1489515780000" expanded="true" signature="2562:2866" ph="{...}" />
+                <marker date="1489515780000" expanded="true" signature="2931:3222" ph="{...}" />
+                <marker date="1489515780000" expanded="true" signature="3275:3352" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnitManager.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logic/UnitManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+              <folding>
+                <marker date="1489516785000" expanded="true" signature="6:47" ph="..." />
+                <marker date="1489516785000" expanded="true" signature="65:1580" ph="{...}" />
+                <marker date="1489516785000" expanded="true" signature="266:1578" ph="{...}" />
+                <marker date="1489516785000" expanded="true" signature="556:782" ph="{...}" />
+                <marker date="1489516785000" expanded="true" signature="574:733" ph="{...}" />
+                <marker date="1489516785000" expanded="true" signature="615:685" ph="{...}" />
+                <marker date="1489516785000" expanded="true" signature="855:1572" ph="{...}" />
+                <marker date="1489516785000" expanded="true" signature="873:1462" ph="{...}" />
+                <marker date="1489516785000" expanded="true" signature="980:1034" ph="{...}" />
+                <marker date="1489516785000" expanded="true" signature="1131:1250" ph="{...}" />
+                <marker date="1489516785000" expanded="true" signature="1492:1562" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnitConversionKeySlot.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logic/UnitConversionKeySlot.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+              <folding>
+                <marker date="1489516780000" expanded="true" signature="16:622" ph="{...}" />
+                <marker date="1489516780000" expanded="true" signature="57:620" ph="{...}" />
+                <marker date="1489516780000" expanded="true" signature="205:290" ph="{...}" />
+                <marker date="1489516780000" expanded="true" signature="340:491" ph="{...}" />
+                <marker date="1489516780000" expanded="true" signature="535:614" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnitConversionValueSlot.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logic/UnitConversionValueSlot.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+              <folding>
+                <marker date="1489516698000" expanded="true" signature="16:547" ph="{...}" />
+                <marker date="1489516698000" expanded="true" signature="59:545" ph="{...}" />
+                <marker date="1489516698000" expanded="true" signature="297:410" ph="{...}" />
+                <marker date="1489516698000" expanded="true" signature="461:539" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnitType.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logic/UnitType.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-190">
+              <caret line="28" column="44" lean-forward="false" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+              <folding>
+                <marker date="1489516543000" expanded="true" signature="6:71" ph="..." />
+                <marker date="1489516543000" expanded="true" signature="89:2918" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="124:2916" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="442:616" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="662:730" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="782:858" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="972:1688" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="1085:1572" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="1298:1494" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="1581:1678" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="1763:2141" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="2015:2103" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="2216:2594" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="2468:2556" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="2637:2910" ph="{...}" />
+                <marker date="1489516543000" expanded="true" signature="2766:2872" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SIUnitTypes.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logic/SystemOfUnits/SI/SIUnitTypes.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1489514909000" expanded="true" signature="33:290" ph="{...}" />
+                <marker date="1489514909000" expanded="true" signature="65:288" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Quantity.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Logic/Quantity.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+              <folding>
+                <marker date="1489516853000" expanded="true" signature="31:1750" ph="{...}" />
+                <marker date="1489516853000" expanded="true" signature="66:1748" ph="{...}" />
+                <marker date="1489516853000" expanded="true" signature="195:260" ph="{...}" />
+                <marker date="1489516853000" expanded="true" signature="485:825" ph="{...}" />
+                <marker date="1489516853000" expanded="true" signature="538:582" ph="{...}" />
+                <marker date="1489516853000" expanded="true" signature="900:1167" ph="{...}" />
+                <marker date="1489516853000" expanded="true" signature="979:1023" ph="{...}" />
+                <marker date="1489516853000" expanded="true" signature="1242:1509" ph="{...}" />
+                <marker date="1489516853000" expanded="true" signature="1321:1365" ph="{...}" />
+                <marker date="1489516853000" expanded="true" signature="1558:1623" ph="{...}" />
+                <marker date="1489516853000" expanded="true" signature="1667:1742" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>UnitConversionValueSlot</find>
+      <find>_conversions</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Logic/Unit.cs" />
+        <option value="$PROJECT_DIR$/Logic/Exception/UnitConversionException.cs" />
+        <option value="$PROJECT_DIR$/Logic/UnitType.cs" />
+        <option value="$PROJECT_DIR$/Logic/UnitConversionValueSlot.cs" />
+        <option value="$PROJECT_DIR$/Logic/UnitConversionKeySlot.cs" />
+        <option value="$PROJECT_DIR$/Logic/UnitManager.cs" />
+        <option value="$PROJECT_DIR$/Logic/Quantity.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Software" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logic" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logic" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SystemOfUnits" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SI" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solution Items" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.mono" />
+    <property name="FullScreen" value="true" />
+  </component>
+  <component name="RunManager" selected=".NET Project.Software">
+    <configuration default="false" name="Software" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Software/Software.csproj" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.5.2" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Software/bin/Debug/Project.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Software/bin/Debug" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
+      <item index="1" class="java.lang.String" itemvalue=".NET Project.Software" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue=".NET Project.Software" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="RuntimeDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cd8ac92d-fe3a-4448-9732-c5225542961b" name="Default" comment="" />
+      <created>1489514967927</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1489514967927</updated>
+      <workItem from="1489514970666" duration="349000" />
+      <workItem from="1489515601104" duration="1117000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1466000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24384525" sideWeight="0.50555557" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24384525" sideWeight="0.49444443" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24305555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.49444443" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Tests/SIUnits.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <marker date="1489514909000" expanded="true" signature="69:129" ph="{...}" />
+            <marker date="1489514909000" expanded="true" signature="112:127" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSharpSettings.DotSettings">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/Exception/UnitConversionException.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/SystemOfUnits/SI/SIUnitTypes.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1489514909000" expanded="true" signature="33:290" ph="{...}" />
+            <marker date="1489514909000" expanded="true" signature="65:288" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/UnitType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-190">
+          <caret line="28" column="44" lean-forward="false" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+          <folding>
+            <marker date="1489516543000" expanded="true" signature="6:71" ph="..." />
+            <marker date="1489516543000" expanded="true" signature="89:2918" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="124:2916" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="442:616" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="662:730" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="782:858" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="972:1688" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="1085:1572" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="1298:1494" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="1581:1678" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="1763:2141" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="2015:2103" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="2216:2594" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="2468:2556" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="2637:2910" ph="{...}" />
+            <marker date="1489516543000" expanded="true" signature="2766:2872" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/UnitConversionValueSlot.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <marker date="1489516698000" expanded="true" signature="16:547" ph="{...}" />
+            <marker date="1489516698000" expanded="true" signature="59:545" ph="{...}" />
+            <marker date="1489516698000" expanded="true" signature="297:410" ph="{...}" />
+            <marker date="1489516698000" expanded="true" signature="461:539" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/UnitConversionKeySlot.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <marker date="1489516780000" expanded="true" signature="16:622" ph="{...}" />
+            <marker date="1489516780000" expanded="true" signature="57:620" ph="{...}" />
+            <marker date="1489516780000" expanded="true" signature="205:290" ph="{...}" />
+            <marker date="1489516780000" expanded="true" signature="340:491" ph="{...}" />
+            <marker date="1489516780000" expanded="true" signature="535:614" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/UnitManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <marker date="1489516785000" expanded="true" signature="6:47" ph="..." />
+            <marker date="1489516785000" expanded="true" signature="65:1580" ph="{...}" />
+            <marker date="1489516785000" expanded="true" signature="266:1578" ph="{...}" />
+            <marker date="1489516785000" expanded="true" signature="556:782" ph="{...}" />
+            <marker date="1489516785000" expanded="true" signature="574:733" ph="{...}" />
+            <marker date="1489516785000" expanded="true" signature="615:685" ph="{...}" />
+            <marker date="1489516785000" expanded="true" signature="855:1572" ph="{...}" />
+            <marker date="1489516785000" expanded="true" signature="873:1462" ph="{...}" />
+            <marker date="1489516785000" expanded="true" signature="980:1034" ph="{...}" />
+            <marker date="1489516785000" expanded="true" signature="1131:1250" ph="{...}" />
+            <marker date="1489516785000" expanded="true" signature="1492:1562" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/Unit.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1003">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1489515780000" expanded="true" signature="16:3360" ph="{...}" />
+            <marker date="1489515780000" expanded="true" signature="47:3358" ph="{...}" />
+            <marker date="1489515780000" expanded="true" signature="721:884" ph="{...}" />
+            <marker date="1489515780000" expanded="true" signature="1178:1216" ph="{...}" />
+            <marker date="1489515780000" expanded="true" signature="1281:1327" ph="{...}" />
+            <marker date="1489515780000" expanded="true" signature="1390:1740" ph="{...}" />
+            <marker date="1489515780000" expanded="true" signature="1805:2067" ph="{...}" />
+            <marker date="1489515780000" expanded="true" signature="2130:2497" ph="{...}" />
+            <marker date="1489515780000" expanded="true" signature="2562:2866" ph="{...}" />
+            <marker date="1489515780000" expanded="true" signature="2931:3222" ph="{...}" />
+            <marker date="1489515780000" expanded="true" signature="3275:3352" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/Quantity.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <marker date="1489516853000" expanded="true" signature="31:1750" ph="{...}" />
+            <marker date="1489516853000" expanded="true" signature="66:1748" ph="{...}" />
+            <marker date="1489516853000" expanded="true" signature="195:260" ph="{...}" />
+            <marker date="1489516853000" expanded="true" signature="485:825" ph="{...}" />
+            <marker date="1489516853000" expanded="true" signature="538:582" ph="{...}" />
+            <marker date="1489516853000" expanded="true" signature="900:1167" ph="{...}" />
+            <marker date="1489516853000" expanded="true" signature="979:1023" ph="{...}" />
+            <marker date="1489516853000" expanded="true" signature="1242:1509" ph="{...}" />
+            <marker date="1489516853000" expanded="true" signature="1321:1365" ph="{...}" />
+            <marker date="1489516853000" expanded="true" signature="1558:1623" ph="{...}" />
+            <marker date="1489516853000" expanded="true" signature="1667:1742" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

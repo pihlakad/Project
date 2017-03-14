@@ -53,8 +53,8 @@
             right = right ?? _none;
 
             return new Unit(
-                string.Concat('(', left.ToString(), '*', right._name, ')'),
-                left.ToString() + '*' + right._symbol, left * right._factor,
+                string.Concat('(', left, '*', right._name, ')'),
+                left + '*' + right._symbol, left * right._factor,
                 right._unitType, false
             );
         }
@@ -76,8 +76,8 @@
             right = right ?? _none;
 
             return new Unit(
-                string.Concat('(', left.ToString(), '*', right._name, ')'),
-                left.ToString() + '*' + right._symbol,
+                string.Concat('(', left, '*', right._name, ')'),
+                left + '*' + right._symbol,
                 left / right._factor,
                 right._unitType.Power(-1),
                 false
@@ -88,8 +88,8 @@
             left = left ?? _none;
 
             return new Unit(
-                string.Concat('(', left._name, '/', right.ToString(), ')'),
-                left._symbol + '/' + right.ToString(),
+                string.Concat('(', left._name, '/', right, ')'),
+                left._symbol + '/' + right,
                 left._factor / right,
                 left._unitType,
                 false

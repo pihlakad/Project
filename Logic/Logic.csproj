@@ -41,12 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Quantity.cs" />
-    <Compile Include="Exception.cs" />
     <Compile Include="StandardUnits\LengthUnits.cs" />
     <Compile Include="StandardUnits\TimeUnits.cs" />
     <Compile Include="SystemOfUnits\SI\SIUnitTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit.cs" />
+    <Compile Include="UnitConversionKeySlot.cs" />
+    <Compile Include="UnitConversionValueSlot.cs" />
     <Compile Include="UnitManager.cs" />
     <Compile Include="UnitType.cs" />
   </ItemGroup>
