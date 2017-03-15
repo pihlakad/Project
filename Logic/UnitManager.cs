@@ -32,7 +32,7 @@ namespace Logic {
                     return new Quantity(amount.Value * amount.Unit.Factor / toUnit.Factor, toUnit);
                 }
 
-                UnitConversionKeySlot expectedSlot = new UnitConversionKeySlot(amount.Unit, toUnit);
+                var expectedSlot = new UnitConversionKeySlot(amount.Unit, toUnit);
                 return Instance._conversions[expectedSlot].Convert(amount).ConvertedTo(toUnit);
             } catch (KeyNotFoundException) {
                 throw new InvalidOperationException();

@@ -1,52 +1,38 @@
-﻿using System;
-
-namespace Logic {
+﻿namespace Logic {
     public sealed class Quantity {
-        private readonly double _value;
-        private readonly Unit _unit;
+        public double Value { get; set; }
+        public Unit Unit { get; set; }
 
         public Quantity(double value, Unit unit) {
-            _value = value;
-            _unit = unit;
+            Value = value;
+            Unit = unit;
         }
 
-        public static Quantity Zero(Unit unit) => new Quantity(0.0, unit);
-        public double Value => _value;
-        public Unit Unit => _unit;
+        public static Quantity Zero(Unit unit) {
+            return new Quantity(0.0, unit);
+        }
 
         public static Quantity operator +(Quantity left, Quantity right) {
-            if ((left == null) && (right == null)) {
-                return null;
-            }
-
             left = left ?? Zero(right.Unit);
             right = right ?? Zero(left.Unit);
 
             return new Quantity(
-                left.Value + right.ConvertedTo(left._unit).Value,
+                left.Value + right.ConvertedTo(left.Unit).Value,
                 left.Unit
             );
         }
 
         public static Quantity operator /(Quantity left, Quantity right) {
-            if (ReferenceEquals(left, null) || ReferenceEquals(right, null)) {
-                return null;
-            }
-
             return new Quantity(
-                left._value / right._value,
-                left._unit / right._unit
+                left.Value / right.Value,
+                left.Unit / right.Unit
             );
         }
 
         public static Quantity operator *(Quantity left, Quantity right) {
-            if (ReferenceEquals(left, null) || ReferenceEquals(right, null)) {
-                return null;
-            }
-
             return new Quantity(
-                left._value * right._value,
-                left._unit * right._unit
+                left.Value * right.Value,
+                left.Unit * right.Unit
             );
         }
 
@@ -55,7 +41,7 @@ namespace Logic {
         }
 
         public override string ToString() {
-            return $"{this.Value:G} {this.Unit}".TrimEnd(null);
+            return $"{Value:G} {Unit}".TrimEnd(null);
         }
     }
 }
