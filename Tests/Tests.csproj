@@ -54,12 +54,6 @@
     <Compile Include="SiUnits.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Archetypes\Archetypes.csproj">
-      <Project>{6e9e4ed6-1bf5-4b29-815a-c8f0f1dfd799}</Project>
-      <Name>Archetypes</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
