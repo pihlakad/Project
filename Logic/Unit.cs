@@ -1,11 +1,5 @@
 ﻿namespace Logic {
     public sealed class Unit {
-        public static Unit None {
-            get {
-                return new Unit(string.Empty, string.Empty, UnitType.None);
-            }
-        }
-
         public string Name { get; set; }
         public string Symbol { get; set; }
         public double Factor { get; set; }
@@ -24,6 +18,12 @@
             this.Factor = factor;
             this.UnitType = unitType;
             this.IsNamed = isNamed;
+        }
+
+        public static Unit None {
+            get {
+                return new Unit(string.Empty, string.Empty, UnitType.None);
+            }
         }
 
         public override string ToString() {

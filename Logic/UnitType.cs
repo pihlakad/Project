@@ -28,26 +28,32 @@ namespace Logic {
         }
 
         private static int GetBaseUnitIndex(string unitTypeName) {
-            // Lock baseUnitTypeNames:
-            baseUnitTypeLock.AcquireReaderLock(2000);
-
             try {
-                // Retrieve index of unitTypeName:
-                int index = baseUnitTypeNames.IndexOf(unitTypeName);
+                // Lock baseUnitTypeNames:
+                baseUnitTypeLock.AcquireReaderLock(2000);
 
-                // If not found, register unitTypeName:
-                if (index == -1) {
-                    baseUnitTypeLock.UpgradeToWriterLock(2000);
-                    index = baseUnitTypeNames.Count;
-                    baseUnitTypeNames.Add(unitTypeName);
+                try {
+                    // Retrieve index of unitTypeName:
+                    var index = baseUnitTypeNames.IndexOf(unitTypeName);
+
+                    // If not found, register unitTypeName:
+                    if (index == -1) {
+                        baseUnitTypeLock.UpgradeToWriterLock(2000);
+                        index = baseUnitTypeNames.Count;
+                        baseUnitTypeNames.Add(unitTypeName);
+                    }
+
+                    // Return index:
+                    return index;
+                } finally {
+                    // Release lock:
+                    baseUnitTypeLock.ReleaseLock();
                 }
-
-                // Return index:
-                return index;
-            } finally {
-                // Release lock:
-                baseUnitTypeLock.ReleaseLock();
+            } catch (ApplicationException) {
+                // The reader lock request timed out.
             }
+
+            return 0;
         }
 
         public static UnitType operator *(UnitType left, UnitType right) {
