@@ -52,7 +52,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AidsTests\StringsTests.cs" />
+    <Compile Include="LogicTests\StringsTests.cs" />
     <Compile Include="LogicTests\ArchetypesTests.cs" />
     <Compile Include="LogicTests\ArchetypeTests.cs" />
     <Compile Include="LogicTests\BaseMeasureTests.cs" />
@@ -75,6 +75,9 @@
       <Project>{d2f10975-7380-42c2-8952-cedd819da87a}</Project>
       <Name>Software</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AidsTests\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

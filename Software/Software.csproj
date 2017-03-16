@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Aids\Aids.csproj">
+      <Project>{f5f5804f-6ee7-4745-8323-826f76b3e0b0}</Project>
+      <Name>Aids</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{759c1b54-12b9-49a2-ba42-81dccbd23b26}</Project>
       <Name>Logic</Name>
