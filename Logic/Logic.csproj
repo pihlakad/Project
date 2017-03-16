@@ -46,7 +46,6 @@
     <Compile Include="Measure.cs" />
     <Compile Include="Metric.cs" />
     <Compile Include="Quantity.cs" />
-    <Compile Include="Exception.cs" />
     <Compile Include="StandardUnits\LengthUnits.cs" />
     <Compile Include="StandardUnits\TimeUnits.cs" />
     <Compile Include="SystemOfUnits\SI\SIUnitTypes.cs" />
