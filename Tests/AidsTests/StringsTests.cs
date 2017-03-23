@@ -1,27 +1,31 @@
-﻿using System;
+﻿using Aids;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Aids;
 
 namespace Tests.AidsTests
 {
     [TestClass]
-    public class StringsTests {
+    public class StringsTests
+    {
         private Strings s;
         [TestInitialize]
-        public void InitTests() {
+        public void InitTests()
+        {
             s = new Strings();
         }
         [TestCleanup]
-        public void CleanTests() {
+        public void CleanTests()
+        {
             s = null;
         }
 
         [TestMethod]
-        public void ConstructorTest() {
+        public void ConstructorTest()
+        {
             Assert.IsNotNull(s);
         }
         [TestMethod]
-        public void EmptyIfNullTest() {
+        public void EmptyIfNullTest()
+        {
             string x = null;
             Assert.IsNull(x);
             x = Strings.EmptyIfNull(x);
