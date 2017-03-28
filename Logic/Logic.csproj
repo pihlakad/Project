@@ -40,14 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ampere.cs" />
     <Compile Include="Archetype.cs" />
     <Compile Include="Archetypes.cs" />
     <Compile Include="BaseMeasure.cs" />
+    <Compile Include="Candela.cs" />
+    <Compile Include="Kelvin.cs" />
+    <Compile Include="Kilogram.cs" />
     <Compile Include="Measure.cs" />
     <Compile Include="Measures.cs" />
+    <Compile Include="Meter.cs" />
     <Compile Include="Metric.cs" />
+    <Compile Include="Mole.cs" />
     <Compile Include="Quantity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Second.cs" />
+    <Compile Include="SIBaseUnit.cs" />
     <Compile Include="SystemOfUnit.cs" />
     <Compile Include="SystemOfUnits.cs" />
     <Compile Include="Unit.cs" />
