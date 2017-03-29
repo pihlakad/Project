@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Aids;
 
 namespace Logic
 {
-    public class Measure :Metric
-    {
+    public class Measure : Metric {
+        private string name;
+        public string Name
+        {
+            get { return Strings.EmptyIfNull(name); }
+            set { name = value; }
+        }
+
+        public void Units() {
+            
+        }
     }
 }

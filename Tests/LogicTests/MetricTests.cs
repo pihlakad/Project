@@ -27,5 +27,20 @@ namespace Tests.LogicTests
             m.Name = null;
             Assert.IsNotNull(m.Name);
         }
+        [TestMethod]
+        public void SymbolTest()
+        {
+            Assert.IsNotNull(m.Symbol);
+            m.Symbol = null;
+            Assert.IsNotNull(m.Symbol);
+        }
+        [TestMethod]
+        public void DefinitionTest()
+        {
+            Assert.IsNotNull(m.Definition);
+            m.Definition = null;
+            Assert.IsNotNull(m.Definition);
+        }
+
     }
 }

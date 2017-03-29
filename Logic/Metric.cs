@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Aids;
-using System.Threading.Tasks;
+﻿using Aids;
 
 namespace Logic
 {
@@ -26,8 +21,6 @@ namespace Logic
         {
             get { return Strings.EmptyIfNull(_definition); }
             set { _definition = value; }
-        }
-      
-
+        }      
     }
 }

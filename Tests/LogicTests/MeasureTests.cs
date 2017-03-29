@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Logic;
 
 namespace Tests.LogicTests
@@ -22,6 +23,15 @@ namespace Tests.LogicTests
         public void ConstructorTest()
         {
             Assert.IsNotNull(m);
+        }
+
+        [TestMethod]
+        public void NameTest() {
+            Assert.IsNotNull(m.Name);
+            m.Name = null;
+            Assert.AreEqual(String.Empty, m.Name);
+            m.Name = "Some name";
+            Assert.AreEqual("Some name", m.Name);
         }
     }
 }

@@ -1,30 +1,27 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Logic;
-using System.Collections.Generic;
 
 namespace Tests.LogicTests
 {
     [TestClass]
-    public class ArchetypesTests
+    public class UnitsTests
     {
-        private Archetypes<string> a;
+        private Units<string> u;
         [TestInitialize]
         public void InitTests()
         {
-            a = new Archetypes<string>();
+            u = new Units<string>();
         }
 
         [TestCleanup]
         public void CleanTests()
         {
-            a = null;
+            u = null;
         }
         [TestMethod]
         public void ConstructorTest()
         {
-            Assert.IsNotNull(a);
+            Assert.IsNotNull(u);
         }
-
-        
     }
 }
