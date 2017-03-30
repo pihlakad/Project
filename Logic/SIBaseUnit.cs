@@ -1,6 +1,6 @@
 ﻿namespace Logic
 {
-    public class SiBaseUnit: Archetype {
+    public class SiBaseUnit: Unit {
         
     }
 }
