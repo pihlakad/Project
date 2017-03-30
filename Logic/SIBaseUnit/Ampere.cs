@@ -1,6 +1,6 @@
 ﻿namespace Logic
 {
- public class Ampere {
+ public class Ampere: SiBaseUnit{
      public string Name = "ampere";
      public string Symbol = "A";
 

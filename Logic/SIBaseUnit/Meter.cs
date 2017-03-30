@@ -1,6 +1,6 @@
 ﻿namespace Logic
 {
-   public class Meter {
+   public class Meter: SiBaseUnit {
        public string Name = "meter";
        public string Symbol = "m";
 

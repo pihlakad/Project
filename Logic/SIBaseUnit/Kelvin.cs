@@ -1,6 +1,6 @@
 ﻿namespace Logic
 {
-    public class Kelvin {
+    public class Kelvin: SiBaseUnit {
         public string Name = "kelvin";
         public string Symbol = "K";
 

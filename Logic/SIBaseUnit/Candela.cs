@@ -1,6 +1,6 @@
 ﻿namespace Logic
 {
-   public class Candela {
+   public class Candela: SiBaseUnit {
        public string Name = "candela";
        public string Symbol = "cd";
 

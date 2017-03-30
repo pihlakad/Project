@@ -1,6 +1,6 @@
 ﻿namespace Logic
 {
-   public class Kilogram {
+   public class Kilogram: SiBaseUnit {
        public string Name = "kilogram";
        public string Symbol = "kg";
 

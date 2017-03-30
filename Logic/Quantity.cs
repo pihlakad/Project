@@ -1,5 +1,5 @@
 ﻿namespace Logic {
-    public sealed class Quantity: Archetype {
+    public sealed class Quantity: Metric {
         public Quantity() {
             
         }

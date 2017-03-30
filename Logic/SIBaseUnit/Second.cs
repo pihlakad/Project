@@ -1,6 +1,6 @@
 ﻿namespace Logic
 {
-   public class Second {
+   public class Second: SiBaseUnit {
        public string Name = "second";
        public string Symbol = "s";
 
