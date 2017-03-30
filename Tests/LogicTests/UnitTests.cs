@@ -9,25 +9,21 @@ namespace Tests.LogicTests
     {
         private Unit u;
         [TestInitialize]
-        public void InitTests()
-        {
+        public void InitTests(){
             u = new Unit();
         }
 
         [TestCleanup]
-        public void CleanTests()
-        {
+        public void CleanTests(){
             u = null;
         }
         [TestMethod]
-        public void ConstructorTest()
-        {
+        public void ConstructorTest(){
             Assert.IsNotNull(u);
         }
 
         [TestMethod]
-        public void NameTest()
-        {
+        public void NameTest(){
             Assert.IsNotNull(u.Name);
             u.Name = null;
             Assert.AreEqual(String.Empty, u.Name);
@@ -44,8 +40,7 @@ namespace Tests.LogicTests
             Assert.AreEqual("Some System", u.SystemOfUnits);
         }
         [TestMethod]
-        public void Measure()
-        {
+        public void Measure(){
             Assert.IsNotNull(u.Measure);
             u.Measure = null;
             Assert.AreEqual(String.Empty, u.Measure);

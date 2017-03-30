@@ -3,14 +3,19 @@
 namespace Logic
 {
     public class Unit : Metric {
-        private string name;
         private string systemOfUnits;
         private string measure;
-
-        public string Name {
-            get { return Strings.EmptyIfNull(name); }
-            set { name = value; }
+        private double factor;
+        public Unit() { }
+        public Unit(Measure m, double factor, string symbol, string name)
+        {
+            measure = m.UniqueId;
+            this.factor = factor;
+            Symbol = symbol;
+            Name = name;
+            UniqueId = symbol;
         }
+
 
         public string SystemOfUnits
         {
@@ -24,12 +29,20 @@ namespace Logic
             set { measure = value; }
         }
 
-        public void GetMeasure() {
-            
+        public Measure GetMeasure() {
+            return Measures.Find(measure);
         }
 
         public void GetSystemOfUnits() {
             
+        }
+
+        public double ToBase(double amount) {
+            return amount * factor;
+        }
+
+        public double FromBase(double amount) {
+            return amount / factor;
         }
     }
 }

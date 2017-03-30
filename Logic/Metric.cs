@@ -2,7 +2,7 @@
 
 namespace Logic
 {
-    public class Metric : Archetype {
+    public class Metric : UniqueEntity {
         private string name;
         private string symbol;
         private string definition;

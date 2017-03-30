@@ -1,7 +1,21 @@
-﻿namespace Logic {
-    public class Measures:Archetypes<Measure> {
-        public Measures () {
+﻿using System;
+using System.Diagnostics.PerformanceData;
+using System.Security.Cryptography.X509Certificates;
 
+namespace Logic {
+    public class Measures:Archetypes<Measure> {
+        public static Measures Instance { get; } = new Measures();
+
+        internal static Measure Add(string name) {
+            var m = Instance.Find(x => x.Name == name);
+            if (m != null) return m;
+            m = new Measure(name);
+            Instance.Add(m);
+            return m;
+        }
+
+        internal static Measure Find(string measure) {
+            Instance.Find(x => x.UniqueId == measure);
         }
     }
 }

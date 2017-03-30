@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Logic
@@ -52,5 +53,10 @@ namespace Logic
             get { return list[index]; }
             set { list[index] = value; }
         }
+        public T Find(Predicate<T> match)
+        {
+            return list.Find(match);
+        }
+
     }
 }

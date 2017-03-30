@@ -18,7 +18,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AEIAAkAAAAAAABAQCAAABAQAAAAAAAAECAAAAABQIAA=</HashCode>
+      <HashCode>AEIAAkAAAAAAABAQCAAABAQAAAAIAAAECAAAAABQIAA=</HashCode>
       <FileName>Archetypes.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -39,31 +39,15 @@
   </Class>
   <Class Name="Logic.Measure" Collapsed="true">
     <Position X="8.75" Y="2.75" Width="1.5" />
-    <InheritanceLine Type="Logic.Metric" FixedFromPoint="true">
-      <Path>
-        <Point X="6.438" Y="3.75" />
-        <Point X="6.438" Y="3.595" />
-        <Point X="9.5" Y="3.595" />
-        <Point X="9.5" Y="3.441" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
       <FileName>Measure.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Logic.Measures" Collapsed="true">
     <Position X="3.75" Y="9.25" Width="1.5" />
-    <InheritanceLine Type="Logic.Archetypes&lt;T&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6.25" Y="8.191" />
-        <Point X="6.25" Y="8.875" />
-        <Point X="4.438" Y="8.875" />
-        <Point X="4.438" Y="9.25" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Measures.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -77,64 +61,8 @@
   <Class Name="Logic.Quantity" Collapsed="true">
     <Position X="5.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAgAAgAAAAIYAAAACAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Quantity.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Logic.Ampere" Collapsed="true">
-    <Position X="13.75" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>SIBaseUnit\Ampere.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Logic.Candela" Collapsed="true">
-    <Position X="16.25" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>SIBaseUnit\Candela.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Logic.Kelvin" Collapsed="true">
-    <Position X="13.75" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>SIBaseUnit\Kelvin.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Logic.Kilogram" Collapsed="true">
-    <Position X="13.75" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>SIBaseUnit\Kilogram.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Logic.Meter" Collapsed="true">
-    <Position X="16" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>SIBaseUnit\Meter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Logic.Mole" Collapsed="true">
-    <Position X="16" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>SIBaseUnit\Mole.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Logic.Second" Collapsed="true">
-    <Position X="13.75" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>SIBaseUnit\Second.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Logic.SiBaseUnit" Collapsed="true">
-    <Position X="11.75" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>SIBaseUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Logic.SystemOfUnit" Collapsed="true">
@@ -162,14 +90,14 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>gAAAAAAAgAAAAAAAAAAAAAQEAAAEAAAABAAAAIQAAAA=</HashCode>
+      <HashCode>gAAAAAAAgAAAQAAAAAAAAAAEAAAAAAgABAAIAIQAAAA=</HashCode>
       <FileName>Unit.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Logic.Units&lt;T&gt;" Collapsed="true">
+  <Class Name="Logic.Units" Collapsed="true">
     <Position X="5.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Units.cs</FileName>
     </TypeIdentifier>
   </Class>

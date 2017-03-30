@@ -53,24 +53,17 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AidsTests\StringsTests.cs" />
-    <Compile Include="LogicTests\AmpereTests.cs" />
     <Compile Include="LogicTests\ArchetypesTests.cs" />
     <Compile Include="LogicTests\ArchetypeTests.cs" />
     <Compile Include="LogicTests\BaseMeasureTests.cs" />
     <Compile Include="LogicTests\DerivedMeasureTest.cs" />
-    <Compile Include="LogicTests\KelvinTests.cs" />
     <Compile Include="LogicTests\MeasuresTests.cs" />
     <Compile Include="LogicTests\MeasureTests.cs" />
-    <Compile Include="LogicTests\MeterTests.cs" />
     <Compile Include="LogicTests\MetricTests.cs" />
-    <Compile Include="LogicTests\MoleTests.cs" />
     <Compile Include="LogicTests\QuantityTests.cs" />
-    <Compile Include="LogicTests\SecondTests.cs" />
     <Compile Include="LogicTests\SystemOfUnitsTests.cs" />
     <Compile Include="LogicTests\SystemOfUnitTests.cs" />
     <Compile Include="LogicTests\UnitsTests.cs" />
-    <Compile Include="LogicTests\CandelaTests.cs" />
-    <Compile Include="LogicTests\KilogramTests.cs" />
     <Compile Include="LogicTests\UnitTests.cs" />
     <Compile Include="Properties\BaseMeasure.cs" />
     <Compile Include="SiUnits.cs" />
