@@ -2,15 +2,20 @@
 <module type="RIDER_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$/../..">
+      <sourceFolder url="file://$MODULE_DIR$/../../Aids" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../CSharpSettings.DotSettings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Logic" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../README.md" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Software" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Tests" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Aids/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Aids/obj" />
       <excludeFolder url="file://$MODULE_DIR$/../../Logic/bin" />
       <excludeFolder url="file://$MODULE_DIR$/../../Logic/obj" />
       <excludeFolder url="file://$MODULE_DIR$/../../Software/bin" />
       <excludeFolder url="file://$MODULE_DIR$/../../Software/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Tests/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Tests/obj" />
       <excludeFolder url="file://$MODULE_DIR$/../../packages" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />

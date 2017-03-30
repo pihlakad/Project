@@ -1,6 +1,7 @@
-﻿namespace Logic
-{
-    public class Measures:Archetypes<int>
-    {
+﻿namespace Logic {
+    public class Measures:Archetypes<Measure> {
+        public Measures () {
+
+        }
     }
 }

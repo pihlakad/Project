@@ -58,10 +58,12 @@
     <Compile Include="LogicTests\ArchetypeTests.cs" />
     <Compile Include="LogicTests\BaseMeasureTests.cs" />
     <Compile Include="LogicTests\KelvinTests.cs" />
+    <Compile Include="LogicTests\MeasuresTests.cs" />
     <Compile Include="LogicTests\MeasureTests.cs" />
     <Compile Include="LogicTests\MeterTests.cs" />
     <Compile Include="LogicTests\MetricTests.cs" />
     <Compile Include="LogicTests\MoleTests.cs" />
+    <Compile Include="LogicTests\QuantityTests.cs" />
     <Compile Include="LogicTests\SecondTests.cs" />
     <Compile Include="LogicTests\SystemOfUnitsTests.cs" />
     <Compile Include="LogicTests\SystemOfUnitTests.cs" />
