@@ -8,7 +8,7 @@ namespace Logic
 {
    public class Mole {
        public string Name = "mole";
-       public string Symbol = " mol";
+       public string Symbol = "mol";
 
        public string Definition = "The mole is the amount of substance" +
                                   "of a system which contains as many " +
