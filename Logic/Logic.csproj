@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DerivedMeasure.cs" />
     <Compile Include="SIBaseUnit\Ampere.cs" />
     <Compile Include="Archetype.cs" />
     <Compile Include="Archetypes.cs" />

@@ -57,6 +57,7 @@
     <Compile Include="LogicTests\ArchetypesTests.cs" />
     <Compile Include="LogicTests\ArchetypeTests.cs" />
     <Compile Include="LogicTests\BaseMeasureTests.cs" />
+    <Compile Include="LogicTests\DerivedMeasureTest.cs" />
     <Compile Include="LogicTests\KelvinTests.cs" />
     <Compile Include="LogicTests\MeasuresTests.cs" />
     <Compile Include="LogicTests\MeasureTests.cs" />
