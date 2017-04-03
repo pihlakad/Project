@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class DerivedMeasure: Measure
+    public class DerivedMeasure : Measure
     {
+        public DerivedMeasure(string name, string symbol = null) : base(name, symbol)
+        {
+        }
+        public DerivedMeasure() : this(string.Empty) { }
     }
 }

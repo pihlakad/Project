@@ -1,4 +1,5 @@
-﻿using Aids;
+﻿using System;
+using Aids;
 
 namespace Logic
 {
@@ -9,6 +10,10 @@ namespace Logic
             Name = name;
             Symbol = symbol;
             UniqueId = name;
+        }
+
+        public Measure() : this(String.Empty) {
+            
         }
 
 

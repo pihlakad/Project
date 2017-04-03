@@ -6,11 +6,11 @@ namespace Tests.LogicTests
     [TestClass]
     public class UnitsTests
     {
-        private Units<string> u;
+        private Units u;
         [TestInitialize]
         public void InitTests()
         {
-            u = new Units<string>();
+            u = new Units();
         }
 
         [TestCleanup]

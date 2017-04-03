@@ -15,7 +15,7 @@ namespace Logic {
         }
 
         internal static Measure Find(string measure) {
-            Instance.Find(x => x.UniqueId == measure);
+            return Instance.Find(x => x.UniqueId == measure);
         }
     }
 }
