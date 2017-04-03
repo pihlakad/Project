@@ -44,7 +44,7 @@
     <Compile Include="Archetype.cs" />
     <Compile Include="Archetypes.cs" />
     <Compile Include="BaseMeasure.cs" />
-    <Compile Include="DistanceUnits.cs" />
+    <Compile Include="SIBaseUnit\DistanceUnits.cs" />
     <Compile Include="Measure.cs" />
     <Compile Include="Measures.cs" />
     <Compile Include="Metric.cs" />
