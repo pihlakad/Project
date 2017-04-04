@@ -44,12 +44,14 @@
     <Compile Include="Archetype.cs" />
     <Compile Include="Archetypes.cs" />
     <Compile Include="BaseMeasure.cs" />
+    <Compile Include="SIBaseUnit\ChargeUnits.cs" />
     <Compile Include="SIBaseUnit\DistanceUnits.cs" />
     <Compile Include="Measure.cs" />
     <Compile Include="Measures.cs" />
     <Compile Include="Metric.cs" />
     <Compile Include="Quantity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SIBaseUnit\TemperatureUnits.cs" />
     <Compile Include="SystemOfUnit.cs" />
     <Compile Include="SystemOfUnits.cs" />
     <Compile Include="UniqueEntity.cs" />
