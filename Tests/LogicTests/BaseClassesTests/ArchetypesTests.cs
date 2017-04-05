@@ -1,16 +1,16 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Logic;
+using Logic.BaseClasses;
 
 namespace Tests.LogicTests
 {
     [TestClass]
-    public class ArchetypeTests
+    public class ArchetypesTests
     {
-        private Archetype a;
+        private Archetypes<string> a;
         [TestInitialize]
         public void InitTests()
         {
-            a = new Archetype();
+            a = new Archetypes<string>();
         }
 
         [TestCleanup]
@@ -23,5 +23,7 @@ namespace Tests.LogicTests
         {
             Assert.IsNotNull(a);
         }
+
+        
     }
 }

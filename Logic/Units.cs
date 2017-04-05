@@ -1,4 +1,5 @@
 ﻿using System;
+using Logic.BaseClasses;
 
 namespace Logic
 {

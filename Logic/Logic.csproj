@@ -40,9 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\Common.cs" />
+    <Compile Include="BaseClasses\Interval.cs" />
+    <Compile Include="BaseClasses\Period.cs" />
+    <Compile Include="BaseClasses\Root.cs" />
+    <Compile Include="BaseClasses\Serializable.cs" />
     <Compile Include="DerivedMeasure.cs" />
-    <Compile Include="Archetype.cs" />
-    <Compile Include="Archetypes.cs" />
+    <Compile Include="BaseClasses\Archetype.cs" />
+    <Compile Include="BaseClasses\Archetypes.cs" />
     <Compile Include="BaseMeasure.cs" />
     <Compile Include="SIBaseUnit\ChargeUnits.cs" />
     <Compile Include="SIBaseUnit\DistanceUnits.cs" />
@@ -67,6 +72,7 @@
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

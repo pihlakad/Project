@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.PerformanceData;
 using System.Security.Cryptography.X509Certificates;
+using Logic.BaseClasses;
 
 namespace Logic {
     public class Measures:Archetypes<Measure> {

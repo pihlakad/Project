@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Logic
+namespace Logic.BaseClasses
 {
     public class Archetypes<T>: Archetype, IList<T>
     {

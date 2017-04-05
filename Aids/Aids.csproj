@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,8 +41,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BooleanValue.cs" />
+    <Compile Include="Char.cs" />
+    <Compile Include="CharacterType.cs" />
+    <Compile Include="CommonTag.cs" />
+    <Compile Include="DateTimeMath.cs" />
+    <Compile Include="DateTimePattern.cs" />
+    <Compile Include="DateTimeValue.cs" />
+    <Compile Include="DecimalValue.cs" />
+    <Compile Include="DoubleMath.cs" />
+    <Compile Include="DoubleValue.cs" />
+    <Compile Include="EnCode.cs" />
+    <Compile Include="EncodingFacade.cs" />
+    <Compile Include="EquationCode.cs" />
+    <Compile Include="FloatValue.cs" />
+    <Compile Include="GetClass.cs" />
+    <Compile Include="GetEnum.cs" />
+    <Compile Include="GetPublic.cs" />
+    <Compile Include="GetRandom.cs" />
+    <Compile Include="GetSolution.cs" />
+    <Compile Include="GetString.cs" />
+    <Compile Include="IntValue.cs" />
+    <Compile Include="IsNamespace.cs" />
+    <Compile Include="IsoGender.cs" />
+    <Compile Include="Json.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="MonthCode.cs" />
+    <Compile Include="MonthsInEnglish.cs" />
+    <Compile Include="ObjectMath.cs" />
+    <Compile Include="ObjectValue.cs" />
+    <Compile Include="PositionCode.cs" />
+    <Compile Include="ProgramUnitName.cs" />
+    <Compile Include="Safe.cs" />
+    <Compile Include="StringPattern.cs" />
     <Compile Include="Strings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringSerialization.cs" />
+    <Compile Include="StringValue.cs" />
+    <Compile Include="TimeSpanValue.cs" />
+    <Compile Include="UseCulture.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="ValueChangedEventArgs.cs" />
+    <Compile Include="Xml.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
