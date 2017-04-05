@@ -7,7 +7,7 @@ namespace Tests.AidsTests {
             Assert.IsFalse(IsNamespace.Running(null));
             Assert.IsFalse(IsNamespace.Running(string.Empty));
             Assert.IsFalse(IsNamespace.Running("Bla-bla"));
-            Assert.IsTrue(IsNamespace.Running("Open.Aids"));
+            Assert.IsTrue(IsNamespace.Running("Aids"));
         }
     }
 }

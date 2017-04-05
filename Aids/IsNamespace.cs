@@ -7,7 +7,7 @@ namespace Aids {
             return
                 Safe.Run(
                     () =>
-                        GetSolution.Assemblies.Any(
+                        GetProject.Assemblies.Any(
                             a => a.FullName.StartsWith(name)), false);
         }
     }

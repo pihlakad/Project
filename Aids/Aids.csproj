@@ -59,7 +59,7 @@
     <Compile Include="GetEnum.cs" />
     <Compile Include="GetPublic.cs" />
     <Compile Include="GetRandom.cs" />
-    <Compile Include="GetSolution.cs" />
+    <Compile Include="GetProject.cs" />
     <Compile Include="GetString.cs" />
     <Compile Include="IntValue.cs" />
     <Compile Include="IsNamespace.cs" />

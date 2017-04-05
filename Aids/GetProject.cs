@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 
 namespace Aids {
-    public class GetSolution {
+    public class GetProject {
         public static AppDomain Domain => AppDomain.CurrentDomain;
         public static List<Assembly> Assemblies => Domain.GetAssemblies().ToList();
         public static Assembly Assembly(string name) {
@@ -23,7 +23,7 @@ namespace Aids {
             }, new List<string>());
         }
         public static string Name => Safe.Run(() => {
-            var n = GetClass.Namespace(typeof(GetSolution));
+            var n = GetClass.Namespace(typeof(GetProject));
             return GetString.Head(n, '.');
         }, string.Empty);
     }

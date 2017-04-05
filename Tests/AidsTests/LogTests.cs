@@ -31,7 +31,7 @@ namespace Tests.AidsTests {
             Assert.IsTrue(m.Contains("\nStackTrace: "));
         }
         [TestMethod] public void SourceTest() {
-            Assert.AreEqual(GetSolution.Name, Log.Source);
+            Assert.AreEqual(GetProject.Name, Log.Source);
         }
     }
 }

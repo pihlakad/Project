@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Aids {
     public class Log {
-        public static string Source => GetSolution.Name;
+        public static string Source => GetProject.Name;
         public static string Message(Exception e) {
             const string f =
                 "Source: {0}\nHResult: {1}\nMessage: {2}\nStackTrace: {3}";

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 
@@ -11,7 +13,8 @@ namespace Aids {
         private const string r = "remove_";
         private const string c = ".ctor";
         private const string v = "value__";
-        private const string t = "+TestClass";
+        private const string t = "+TestClass";       
+
         public static string Namespace(Type type) {
             return Utils.IsNull(type) ? string.Empty : type.Namespace;
         }
