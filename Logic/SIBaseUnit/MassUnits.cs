@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic.SIBaseUnit
 {
-    class MassUnits
+    public class MassUnits
     {
     }
 }
