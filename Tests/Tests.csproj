@@ -87,6 +87,7 @@
     <Compile Include="LogicTests\QuantityTests.cs" />
     <Compile Include="LogicTests\SIBaseUnitTests\ChargeUnitsTests.cs" />
     <Compile Include="LogicTests\SIBaseUnitTests\IntensityUnitsTests.cs" />
+    <Compile Include="LogicTests\SIBaseUnitTests\MassUnitsTests.cs" />
     <Compile Include="LogicTests\SIBaseUnitTests\SubstanceUnitsTests.cs" />
     <Compile Include="LogicTests\SIBaseUnitTests\TemperatureUnitsTests.cs" />
     <Compile Include="LogicTests\SIBaseUnitTests\DistanceUnitsTests.cs" />
