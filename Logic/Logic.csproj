@@ -57,6 +57,7 @@
     <Compile Include="Quantity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SIBaseUnit\IntensityUnits.cs" />
+    <Compile Include="SIBaseUnit\MassUnits.cs" />
     <Compile Include="SIBaseUnit\SubstanceUnits.cs" />
     <Compile Include="SIBaseUnit\TemperatureUnits.cs" />
     <Compile Include="SystemOfUnit.cs" />
