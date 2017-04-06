@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Logic.BaseClasses;
+﻿using Logic.BaseClasses;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests.LogicTests
+namespace Tests.LogicTests.BaseClassesTests
 {
     [TestClass]
     public class ArchetypesTests
