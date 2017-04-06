@@ -60,6 +60,7 @@
     <Compile Include="SIBaseUnit\MassUnits.cs" />
     <Compile Include="SIBaseUnit\SubstanceUnits.cs" />
     <Compile Include="SIBaseUnit\TemperatureUnits.cs" />
+    <Compile Include="SIBaseUnit\TimeUnits.cs" />
     <Compile Include="SystemOfUnit.cs" />
     <Compile Include="SystemOfUnits.cs" />
     <Compile Include="UniqueEntity.cs" />
