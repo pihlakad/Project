@@ -6,7 +6,13 @@ namespace Logic.BaseClasses
 {
     public class Archetypes<T>: Archetype, IList<T>
     {
-        private List<T> list = new List<T>();
+        private readonly List<T> list = new List<T>();
+        public Archetypes() : this(null) { }
+
+        public Archetypes(IEnumerable<T> range) {
+            if (range == null) return;
+            list.AddRange(range);
+        }
         public IEnumerator<T> GetEnumerator() {
             return list.GetEnumerator();
         }
@@ -35,7 +41,7 @@ namespace Logic.BaseClasses
             return list.Remove(item);
         }
 
-        public int Count { get; }
+        public int Count => list.Count;
         public bool IsReadOnly { get; }
         public int IndexOf(T item) {
             return list.IndexOf(item);

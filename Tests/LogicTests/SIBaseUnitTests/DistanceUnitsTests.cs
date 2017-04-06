@@ -5,18 +5,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests.LogicTests.SIBaseUnitTests
 {
     [TestClass]
-    public class DistanceUnitsTests {
+    public class DistanceUnitsTests{
         [TestMethod]
         public void InitializeTest() {
-            var m = Measures.Instance.Find(x => x.Name =="distance");
-            if (m != null)
-                Measures.Instance.Remove(m);
-            var n = Measures.Instance.Find(x => x.Name == "distance");
-            Assert.IsNull(n);
-            DistanceUnits.Initialize();
-            n = Measures.Instance.Find(x => x.Name == "distance");
-            Assert.IsNotNull(n);
-            Assert.AreEqual("distance", n.Name);
+            Measures.Instance.Clear();
+            Units.Instance.Clear();
+            DistanceUnit.Initialize();
+            Assert.AreEqual("distance", Measures.Instance.Find(x=>x.Name == "distance").UniqueId);
+            Assert.AreEqual("meter", Units.Instance.Find(x => x.Name == "meter").UniqueId);
         }
     }
 }

@@ -21,6 +21,14 @@ namespace Logic
         {
             get { return Strings.EmptyIfNull(definition); }
             set { definition = value; }
-        }      
+        }
+
+        protected override void SetRandomValues() {
+            base.SetRandomValues();
+            name = GetRandom.String();
+            symbol = GetRandom.String();
+            definition = GetRandom.String();
+
+        }
     }
 }

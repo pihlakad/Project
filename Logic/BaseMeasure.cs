@@ -11,5 +11,11 @@ namespace Logic
         public BaseMeasure():this(string.Empty) {
             
         }
+
+        public new static BaseMeasure Random() {
+            var m = new BaseMeasure();
+            m.SetRandomValues();
+            return m;
+        }
     }
 }

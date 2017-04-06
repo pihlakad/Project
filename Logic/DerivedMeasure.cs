@@ -12,5 +12,11 @@ namespace Logic
         {
         }
         public DerivedMeasure() : this(string.Empty) { }
+
+        public new static DerivedMeasure Random() {
+            var m = new DerivedMeasure();
+            m.SetRandomValues();
+            return m;
+        }
     }
 }

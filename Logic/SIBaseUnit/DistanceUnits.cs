@@ -1,6 +1,6 @@
 ﻿namespace Logic.SIBaseUnit
 {
-    public static class DistanceUnits
+    public static class DistanceUnit
     {
         public static void Initialize() {
             var m = Measures.Add("distance");

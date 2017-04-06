@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Aids;
+using Logic.BaseClasses;
 
 namespace Logic
 {
-    public class UniqueEntity
+    public class UniqueEntity: Archetype
     {
         private string uniqueId;
 
@@ -17,5 +18,9 @@ namespace Logic
             set { uniqueId = value; }
         }
 
+        protected override void SetRandomValues() {
+            base.SetRandomValues();
+            uniqueId = GetRandom.String();
+        }
     }
 }

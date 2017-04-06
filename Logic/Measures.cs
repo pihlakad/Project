@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.PerformanceData;
 using System.Security.Cryptography.X509Certificates;
+using Aids;
 using Logic.BaseClasses;
 
 namespace Logic {
@@ -17,6 +18,14 @@ namespace Logic {
 
         internal static Measure Find(string measure) {
             return Instance.Find(x => x.UniqueId == measure);
+        }
+
+        public static Measures Random() {
+            var m = new Measures();
+            var c = GetRandom.Count(2, 5);
+            for (var i = 0; i < c; i++)
+                m.Add(Measure.Random());
+            return m;
         }
     }
 }
