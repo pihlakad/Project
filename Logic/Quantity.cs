@@ -4,14 +4,14 @@ using Aids;
 namespace Logic {
     public sealed class Quantity {
         private double amount;
-        private string unit;
+        private string quantityUnit;
 
-        public string Unit {
-            get { return Strings.EmptyIfNull(unit); }
-            set { unit = value; }
+        public string QuantityUnit {
+            get { return Strings.EmptyIfNull(quantityUnit); }
+            set { quantityUnit = value; }
         }
 
-        public Unit GetUnit => Units.Find(Unit);
+        public Unit GetUnit => Units.Find(QuantityUnit);
         public double Amount
         {
             get { return amount; }
@@ -23,6 +23,8 @@ namespace Logic {
         }
         public Quantity(double amount, Unit u) {
             u = u ?? new Unit();
+            QuantityUnit = u.Symbol;
+            Amount = amount;
         }
 
         public bool IsEqual(Quantity q) {

@@ -29,6 +29,12 @@ namespace Logic
             set { measure = value; }
         }
 
+        public double Factor
+        {
+            get { return factor; }
+            set { factor = value; }
+        }
+
         public Measure GetMeasure() {
             return Measures.Find(measure);
         }
