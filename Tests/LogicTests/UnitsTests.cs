@@ -4,24 +4,24 @@ using Logic;
 namespace Tests.LogicTests
 {
     [TestClass]
-    public class UnitsTests
+    public class UnitsTests:CommonTests<Units>
     {
-        private Units u;
+        private Units unit;
         [TestInitialize]
-        public void InitTests()
+        public override void TestInitialize()
         {
-            u = new Units();
+            unit = new Units();
         }
-
-        [TestCleanup]
-        public void CleanTests()
-        {
-            u = null;
-        }
+        
         [TestMethod]
         public void ConstructorTest()
         {
-            Assert.IsNotNull(u);
+            Assert.IsNotNull(unit);
+        }
+
+        protected override Units getRandomObj() {
+            var r = Units.Random();
+            return r;
         }
     }
 }

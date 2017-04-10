@@ -1,4 +1,5 @@
 ﻿using System;
+using Aids;
 using Logic.BaseClasses;
 
 namespace Logic
@@ -19,6 +20,15 @@ namespace Logic
         internal static Unit Find(string unit)
         {
             return Instance.Find(x => x.UniqueId == unit);
+        }
+
+        public static Units Random() {
+            var u = new Units();
+            var c = GetRandom.Count(2, 5);
+            for (int i = 0; i < c; i++) {
+                u.Add(Unit.Random());
+            }
+            return u;
         }
     }
 }
