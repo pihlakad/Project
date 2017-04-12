@@ -19,7 +19,7 @@ namespace Logic
             return m;
         }
 
-        public Unit GetBaseMeasure(Measure measure) {
+        public static Unit GetBaseMeasure(Measure measure) {
             return Logic.Units.Instance.Find(x => x.Factor == 1);
         }
     }

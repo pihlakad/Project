@@ -32,6 +32,11 @@ namespace Logic.BaseClasses
             if (IsNull(variable)) SetValue(ref variable, value);
             return variable;
         }
+        public T SetDefault<T>(ref T variable) where T : new()
+        {
+            if (IsNull(variable)) SetValue(ref variable, new T());
+            return variable;
+        }
         public void SetValue<T>(ref T variable, T value)
         {
             if (isReadOnly) return;

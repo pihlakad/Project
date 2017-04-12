@@ -32,13 +32,93 @@ namespace Logic {
             var u2 = q.GetUnit;
             if (u1.Measure != u2.Measure) return false;
             var q1 = Convert(u2);
-            return Math.Abs(q1.Amount - q.Amount) < 0.00000000001;
+            return Math.Abs(q1.Amount - q.Amount) < 0.0000000001;
+        }
+
+        public bool IsGreaterThan(Quantity q) {
+            var u1 = GetUnit;
+            var u2 = q.GetUnit;
+            if (u1.Measure != u2.Measure) return false;
+            var q1 = Convert(u2);
+            return q.Amount > q1.Amount;
+        }
+
+        public bool IsLessThan(Quantity q) {
+            return !IsGreaterThan(q);
         }
 
         public Quantity Convert(Unit u) {
             var a = GetUnit.ToBase(amount);
             a = u.FromBase(a);
             return new Quantity(a, u);
+        }
+
+        public Quantity Add(Quantity q) {
+            var u1 = GetUnit;
+            var u2 = q.GetUnit;
+            if (u1.Measure != u2.Measure) return new Quantity(0, u1);
+            var a = GetUnit.ToBase(amount);
+            a = a + q.GetUnit.ToBase(q.amount);
+            return new Quantity(q.GetUnit.FromBase(a), q.GetUnit);
+        }
+
+        public Quantity Subtract(Quantity q)
+        {
+            var u1 = GetUnit;
+            var u2 = q.GetUnit;
+            if (u1.Measure != u2.Measure) return new Quantity(0, u1);
+            var a = GetUnit.ToBase(amount);
+            a = a + q.GetUnit.ToBase(q.amount);
+            return new Quantity(q.GetUnit.FromBase(a), q.GetUnit);
+        }
+
+        public Quantity Multiply(double a) { return new Quantity(Amount * a, GetUnit); }
+
+        public Quantity Divide(double a) { return new Quantity(Amount / a, GetUnit); }
+
+        public Quantity Multiply(Quantity q)
+        {
+            var u1 = GetUnit;
+            var u2 = q.GetUnit;
+            if (u1.Measure != u2.Measure) return new Quantity(0, u1);
+            var a = GetUnit.ToBase(amount);
+            a = a + q.GetUnit.ToBase(q.amount);
+            return new Quantity(q.GetUnit.FromBase(a), q.GetUnit);
+        }
+
+        public Quantity Divide(Quantity q)
+        {
+            var u1 = GetUnit;
+            var u2 = q.GetUnit;
+            if (u1.Measure != u2.Measure) return new Quantity(0, u1);
+            var a = GetUnit.ToBase(amount);
+            a = a + q.GetUnit.ToBase(q.amount);
+            return new Quantity(q.GetUnit.FromBase(a), q.GetUnit);
+        }
+        public Quantity Round(Rounding policy)
+        {
+            var d = RoundNumber(amount, policy);
+            return new Quantity(d, GetUnit);
+        }
+        private static double RoundNumber(double d, Rounding p)
+        {
+            switch (p.Strategy)
+            {
+                case Approximate.Up:
+                    return Logic.Round.Up(d, p.Decimals);
+                case Approximate.Down:
+                    return Logic.Round.Down(d, p.Decimals);
+                case Approximate.UpByStep:
+                    return Logic.Round.UpByStep(d, p.Step);
+                case Approximate.DownByStep:
+                    return Logic.Round.DownByStep(d, p.Step);
+                case Approximate.TowardsPositive:
+                    return Logic.Round.TowardsPositive(d, p.Decimals);
+                case Approximate.TowardsNegative:
+                    return Logic.Round.TowardsNegative(d, p.Decimals);
+                default:
+                    return Logic.Round.Off(d, p.Decimals, p.Digit);
+            }
         }
     }
 }
