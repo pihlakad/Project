@@ -6,9 +6,9 @@ namespace Logic
         private string systemOfUnits;
         private string measure;
         private double factor;
-        public Unit() { }
-        public Unit(Measure m, double factor, string symbol, string name)
-        {
+        public Unit() {}
+
+        public Unit(Measure m, double factor, string symbol, string name) {
             measure = m.UniqueId;
             this.factor = factor;
             Symbol = symbol;
@@ -17,38 +17,32 @@ namespace Logic
         }
 
 
-        public string SystemOfUnits
-        {
+        public string SystemOfUnits {
             get { return Strings.EmptyIfNull(systemOfUnits); }
             set { systemOfUnits = value; }
         }
 
-        public string Measure
-        {
+        public string Measure {
             get { return Strings.EmptyIfNull(measure); }
             set { measure = value; }
         }
 
-        public double Factor
-        {
+        public double Factor {
             get { return factor; }
             set { factor = value; }
         }
 
-        public Measure GetMeasure() {
-            return Measures.Find(measure);
-        }
+        public static Unit Empty { get; } = new Unit {isReadOnly = true};
 
-        public void GetSystemOfUnits() {
-            
-        }
+        public Measure GetMeasure => Measures.Find(Measure) ?? Logic.Measure.Empty;
+        public void GetSystemOfUnits() {}
 
         public double ToBase(double amount) {
-            return amount * factor;
+            return amount*factor;
         }
 
         public double FromBase(double amount) {
-            return amount / factor;
+            return amount/factor;
         }
 
         public static Unit Random() {
