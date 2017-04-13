@@ -1,5 +1,6 @@
 ﻿using System;
 using Aids;
+using Logic;
 
 namespace Logic {
     public sealed class Quantity {
@@ -51,6 +52,23 @@ namespace Logic {
             var a = GetUnit.ToBase(amount);
             a = u.FromBase(a);
             return new Quantity(a, u);
+        }
+        public Quantity ConvertTo(Unit u)
+        {
+            u = u ?? Unit.Empty;
+            var d = convertTo(amount, u);
+            return new Quantity(u, d);
+        }
+        private double convertTo(double d, Unit u)
+        {
+            if (ReferenceEquals(null, u)) return double.NaN;
+            if (!isSameMeasure(u)) return double.NaN;
+            d = GetUnit.ToBase(d);
+            return u.FromBase(d);
+        }
+        private bool isSameMeasure(Unit u)
+        {
+            return GetUnit.GetMeasure.IsSameContent(u.GetMeasure);
         }
 
         public Quantity Add(Quantity q) {

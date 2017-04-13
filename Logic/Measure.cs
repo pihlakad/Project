@@ -26,5 +26,6 @@ namespace Logic
             if (GetRandom.Bool()) return BaseMeasure.Random();
             return DerivedMeasure.Random();
         }
+        public static Measure Empty { get; } = new BaseMeasure { isReadOnly = true };
     }
 }
