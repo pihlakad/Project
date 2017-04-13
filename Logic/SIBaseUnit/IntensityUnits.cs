@@ -11,8 +11,6 @@ namespace Logic.SIBaseUnit
         public static void Initialize() {
             var m = Measures.Add("intensity");
             Units.Add(m, 1, "cd", "candela");
-            ;
-
         }
     }
 }

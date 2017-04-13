@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Approximate.cs" />
     <Compile Include="BaseClasses\Common.cs" />
     <Compile Include="BaseClasses\Interval.cs" />
     <Compile Include="BaseClasses\Period.cs" />
@@ -49,6 +51,8 @@
     <Compile Include="BaseClasses\Archetype.cs" />
     <Compile Include="BaseClasses\Archetypes.cs" />
     <Compile Include="BaseMeasure.cs" />
+    <Compile Include="Round.cs" />
+    <Compile Include="Rounding.cs" />
     <Compile Include="SIBaseUnit\ChargeUnits.cs" />
     <Compile Include="SIBaseUnit\DistanceUnits.cs" />
     <Compile Include="Measure.cs" />

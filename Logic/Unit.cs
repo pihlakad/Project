@@ -29,6 +29,12 @@ namespace Logic
             set { measure = value; }
         }
 
+        public double Factor
+        {
+            get { return factor; }
+            set { factor = value; }
+        }
+
         public Measure GetMeasure() {
             return Measures.Find(measure);
         }
@@ -43,6 +49,15 @@ namespace Logic
 
         public double FromBase(double amount) {
             return amount / factor;
+        }
+
+        public static Unit Random() {
+            var n = new Unit();
+            n.SetRandomValues();
+            n.Measure = GetRandom.String();
+            n.Factor = GetRandom.Double();
+            n.SystemOfUnits = GetRandom.String();
+            return n;
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using Logic;
+using Logic.SIBaseUnit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.LogicTests.SIBaseUnitTests
@@ -7,8 +9,13 @@ namespace Tests.LogicTests.SIBaseUnitTests
     public class MassUnitsTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void InitalizeTest()
         {
+            Units.Instance.Clear();
+            Measures.Instance.Clear();
+            MassUnits.Initialize();
+            Assert.AreEqual("mass", Measures.Instance.Find(x=>x.Name =="mass").Name);
+            Assert.AreEqual("kilogramm", Units.Instance.Find(x=>x.Name=="kilogramm").Name);
         }
     }
 }

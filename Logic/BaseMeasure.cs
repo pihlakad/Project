@@ -6,6 +6,7 @@ namespace Logic
     {
         public BaseMeasure(string name, string symbol = null) : base(name, symbol)
         {
+
         }
 
         public BaseMeasure():this(string.Empty) {
@@ -16,6 +17,10 @@ namespace Logic
             var m = new BaseMeasure();
             m.SetRandomValues();
             return m;
+        }
+
+        public static Unit GetBaseMeasure(Measure measure) {
+            return Logic.Units.Instance.Find(x => x.Factor == 1);
         }
     }
 }

@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Diagnostics.PerformanceData;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Serialization;
 using Aids;
 using Logic.BaseClasses;
+using System.Runtime.Serialization;
 
 namespace Logic {
+    [KnownType(typeof(BaseMeasure))]
+    [KnownType(typeof(DerivedMeasure))]
+    [XmlInclude(typeof(BaseMeasure))]
+    [XmlInclude(typeof(DerivedMeasure))]
+
     public class Measures:Archetypes<Measure> {
         public static Measures Instance { get; } = new Measures();
 
