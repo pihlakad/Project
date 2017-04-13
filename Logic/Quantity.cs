@@ -57,7 +57,7 @@ namespace Logic {
         {
             u = u ?? Unit.Empty;
             var d = convertTo(amount, u);
-            return new Quantity(u, d);
+            return new Quantity(d, u);
         }
         private double convertTo(double d, Unit u)
         {

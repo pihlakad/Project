@@ -1,30 +1,31 @@
-﻿namespace Logic
+﻿
+namespace Logic
 {
     public class DerivedMeasure : Measure
     {
 
         public static void Initialize()
         {
-            var m = DerivedMeasure.Add("area");
-            Units.Add(m, "m" * "m", "m2", "ruutmeeter");
+            var a = Measures.Add("area");            
+            Logic.Units.Add(a, 1, "m2", "ruutmeeter");
 
-            var m = DerivedMeasure.Add("volume");
-            Units.Add(m, "m" * "m" * "m", "m3", "kuupmeeter");
+            var v = Measures.Add("volume");
+            Logic.Units.Add(v, 1, "m3", "kuupmeeter");
 
-            var m = DerivedMeasure.Add("speed");
-            Units.Add(m, "m" / "s", "m/s", "meetrit sekundis");
+            var s = Measures.Add("speed");
+            Logic.Units.Add(s, 1, "m/s", "meetrit sekundis");
 
-            var m = DerivedMeasure.Add("acceleration");
-            Units.Add(m, "m" / "s" * "s", "m/s2", "meetrit ruutsekundis");
+            var t = Measures.Add("acceleration");
+            Logic.Units.Add(t, 1, "m/s2", "meetrit ruutsekundis");
 
-            var m = DerivedMeasure.Add("current density");
-            Units.Add(m, "A" / "m" * "m", "A/m2", "amprit ruutmeetris");
+            var c = Measures.Add("current density");
+            Logic.Units.Add(c, 1, "A/m2", "amprit ruutmeetris");
 
-            var m = DerivedMeasure.Add("concentration");
-            Units.Add(m, "mol" / "m" * "m" * "m", "mol/m3", "mooli kuumpeetris");
+            var u = Measures.Add("concentration");
+            Logic.Units.Add(u, 1, "mol/m3", "mooli kuumpeetris");
 
-            var m = DerivedMeasure.Add("luminance");
-            Units.Add(m, "cd" / "m" * "m", "cd/m2", "meetrit sekundis");
+            var l = Measures.Add("luminance");
+            Logic.Units.Add(l, 1, "cd/m2", "meetrit sekundis");
 
         }
         public DerivedMeasure(string name, string symbol = null) : base(name, symbol)
