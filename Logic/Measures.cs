@@ -18,7 +18,7 @@ namespace Logic {
         internal static Measure Add(string name) {
             var m = Instance.Find(x => x.Name == name);
             if (m != null) return m;
-            m = new Measure(name);
+            m = new BaseMeasure(name);
             Instance.Add(m);
             return m;
         }

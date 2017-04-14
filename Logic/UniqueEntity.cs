@@ -10,7 +10,7 @@ namespace Logic
 {
     public class UniqueEntity: Archetype
     {
-        private string uniqueId;
+        protected string uniqueId;
 
         public string UniqueId
         {

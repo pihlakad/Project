@@ -3,7 +3,11 @@ namespace Logic
 {
     public class DerivedMeasure : Measure
     {
-
+        private MeasureTerms t;
+        public MeasureTerms Terms {
+            get { return SetDefault(ref t); }
+            set { SetValue(ref t, value); }
+        }
         public static void Initialize()
         {
             var a = Measures.Add("area");            
@@ -28,16 +32,24 @@ namespace Logic
             Logic.Units.Add(l, 1, "cd/m2", "meetrit sekundis");
 
         }
-        public DerivedMeasure(string name, string symbol = null) : base(name, symbol)
+        public DerivedMeasure() : this(null) { }
+
+        public DerivedMeasure(MeasureTerms t, string name = null, string symbol = null)
         {
-        
+            this.t = t;
+            this.name = name ?? t.Formula();
+            this.symbol = symbol ?? name;
+            this.definition = name;
+            this.uniqueId = name;
         }
-        public DerivedMeasure() : this(string.Empty) { }
 
         public new static DerivedMeasure Random() {
             var m = new DerivedMeasure();
             m.SetRandomValues();
             return m;
+        }
+        public override string Formula(bool isLong = false) {
+            return t.Formula(isLong);
         }
     }
 }

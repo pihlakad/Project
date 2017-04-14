@@ -2,19 +2,32 @@
 
 namespace Logic
 {
-    public class Metric : UniqueEntity {
-        private string name;
-        private string symbol;
-        private string definition;
-
+    public abstract class Metric : UniqueEntity {
+        protected string name;
+        protected string symbol;
+        protected string definition;
+        protected Metric(): this (null) { }
+        protected Metric (string name, string symbol = null, string definition = null) {
+            name = name ?? string.Empty;
+            symbol = symbol ?? name;
+            definition = definition ?? name;
+            this.name = name;
+            this.symbol = symbol;
+            this.definition = definition;
+            uniqueId = name;
+        }
+        public virtual string Formula(bool isLong = false)
+        {
+            return isLong ? Name : Symbol;
+        }
         public string Name
         {
             get { return Strings.EmptyIfNull(name); }
             set { name = value; }
         }
         public string Symbol {
-            get { return Strings.EmptyIfNull(symbol); }
-            set { symbol = value; }
+            get { return SetDefault(ref symbol); }
+            set { SetValue(ref symbol, value); }
         }
 
         public string Definition

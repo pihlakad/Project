@@ -19,8 +19,11 @@ namespace Logic
             return m;
         }
 
-        public static Unit GetBaseMeasure(Measure measure) {
-            return Logic.Units.Instance.Find(x => x.Factor == 1);
+        public Measure Multiply(BaseMeasure m) {
+            var t1 = new MeasureTerm(this, 1);
+            var t2 = new MeasureTerm(m, 1);
+            var t = new MeasureTerms {t1, t2};
+            return new DerivedMeasure(t);
         }
     }
 }

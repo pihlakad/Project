@@ -4,11 +4,12 @@ using Logic;
 namespace Tests.LogicTests
 {
     [TestClass]
-    public class MetricTests {
+    public class MetricTests : ClassTests<Metric> {
+        private class TestClass: Metric{ }
         private Metric m;
         [TestInitialize]
         public void InitTests() {
-            m = new Metric();
+            m = new TestClass();
         }
 
         [TestCleanup]

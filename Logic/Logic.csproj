@@ -51,6 +51,8 @@
     <Compile Include="BaseClasses\Archetype.cs" />
     <Compile Include="BaseClasses\Archetypes.cs" />
     <Compile Include="BaseMeasure.cs" />
+    <Compile Include="MeasureTerm.cs" />
+    <Compile Include="MeasureTerms.cs" />
     <Compile Include="Round.cs" />
     <Compile Include="Rounding.cs" />
     <Compile Include="SIBaseUnit\ChargeUnits.cs" />

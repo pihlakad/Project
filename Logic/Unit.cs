@@ -6,14 +6,12 @@ namespace Logic
         private string systemOfUnits;
         private string measure;
         private double factor;
-        public Unit() {}
+        public Unit(): this(null, 0, null, null) {}
 
-        public Unit(Measure m, double factor, string symbol, string name) {
+        public Unit(Measure m, double factor, string symbol, string name): base(name, symbol) {
+            m = m ?? Logic.Measure.Empty;
             measure = m.UniqueId;
             this.factor = factor;
-            Symbol = symbol;
-            Name = name;
-            UniqueId = symbol;
         }
 
 

@@ -5,15 +5,15 @@ using Logic;
 namespace Tests.LogicTests
 {
     [TestClass]
-    public class MeasureTests
+    public class MeasureTests: ClassTests<Measure>
     {
+        private class TestClass: Measure { }
         private Measure m;
         [TestInitialize]
         public void InitTests()
         {
-            m = new Measure();
+            m = new TestClass();
         }
-
         [TestCleanup]
         public void CleanTests()
         {
@@ -24,7 +24,9 @@ namespace Tests.LogicTests
         {
             Assert.IsNotNull(m);
         }
-
+        [TestMethod] public void SymbolTest() {
+            testProperty(()=>m.Symbol, x => m.Symbol = x);
+        }
         [TestMethod]
         public void NameTest() {
             Assert.IsNotNull(m.Name);
