@@ -3,6 +3,7 @@ namespace Logic
 {
     public class DerivedMeasure : Measure
     {
+        //TODO 3: soovitan selle t nimetada ümber terms
         private MeasureTerms t;
         public MeasureTerms Terms {
             get { return SetDefault(ref t); }
@@ -36,6 +37,11 @@ namespace Logic
 
         public DerivedMeasure(MeasureTerms t, string name = null, string symbol = null)
         {
+            //TODO 1: viga on lauses, kus sees t.Formula(), sest t on null 
+            // ja keegi seda ei kontrolli
+            // kirjutage rea this.t = t ette selline rida t=t?? new MeasureTerms();
+            //
+            //t = t ?? new MeasureTerms();
             this.t = t;
             this.name = name ?? t.Formula();
             this.symbol = symbol ?? name;
@@ -48,8 +54,25 @@ namespace Logic
             m.SetRandomValues();
             return m;
         }
+
+        //TODO 2: alati, kui on klassil privaatne muutuja nagu antud klassis on t
+        // kui vabastate SetRandomValues kommentaridest, kontrollige, 
+        // et vabastate kommentaridest ka Random meetodi klassis MeasureTerms 
+        //protected override void SetRandomValues() {
+        //    base.SetRandomValues();
+        //    t = MeasureTerms.Random();
+        //}
+
         public override string Formula(bool isLong = false) {
             return t.Formula(isLong);
         }
+
+        //TODO 17: Analogiliset BaseMeasure korrutamise, astendamise
+        // pöördväärtuse leidmise ja jagamise meetoditele tuleb
+        // defineerida meetodid DerivedMeasure jaoks ja need ka 
+        // testida
+
+        //TODO 18: võiksite selle kõigega enne kokkusaaamist ... edu  
+
     }
 }
