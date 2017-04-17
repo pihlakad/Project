@@ -21,16 +21,10 @@ namespace Logic.BaseClasses
             return GetEnumerator();
         }
 
-        //TODO 9: Add meetodit tahame MeasureTerms juures üle kirjutada
-        // selleks on vaja Add teha siin virtual meetodiks
-        //
-        public void Add(T item)
+        public virtual void Add(T item)
         {
             list.Add(item);
         }
-        //public virtual void Add(T item) {
-        //    list.Add(item);
-        //}
 
         public void Clear() {
             list.Clear();
