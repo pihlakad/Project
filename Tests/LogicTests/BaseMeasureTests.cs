@@ -31,7 +31,7 @@ namespace Tests.LogicTests
             var m2 = new BaseMeasure("t");
             Measures.Instance.Add(m1);
             Measures.Instance.Add(m2);
-            var m = m1.Multiply(m2);            
+            var m = m1.Multiply(m2);                      
             Assert.AreEqual("v^1*t^1", m.Formula());
         }
 
@@ -65,18 +65,7 @@ namespace Tests.LogicTests
             var m = m1.Divide(m2);
             Assert.AreEqual("a^1*b^-1", m.Formula());
         }
-
-        //[TestMethod]
-        //public void DivideWithDerived() {
-        //    var m1 = new BaseMeasure("a");
-        //    var m2 = new BaseMeasure("b");
-        //    Measures.Instance.Add(m1);
-        //    Measures.Instance.Add(m2);
-        //    var d1 = m1.Multiply(m1);
-        //    var d2 = m2.Multiply(m2);
-        //    var d = d1.Divide(d2);
-        //}
-
+       
         [TestMethod]
         public void ExponentiationTest() {
             var m1 = new BaseMeasure("a");
@@ -93,20 +82,10 @@ namespace Tests.LogicTests
 
         [TestMethod]
         public void ReciprocalTest() {
-            var m1 = new BaseMeasure("a");
-            var m2 = new BaseMeasure("b");
-            Measures.Instance.Add(m1);
-            Measures.Instance.Add(m2);
-            var m = m1.Reciprocal(m2);
-            Assert.AreEqual("a^-1*b^1", m.Formula());
-        }
-        //TODO 16: analoogiliselt tuleks nüüd teha Multiply eeskujul ka sellised meetodid
-        // astendamise, pöördväärtuse ja jagamise kohta ja need ka testida
-        // tuletan meelde, et kui MeasureTerms sisse jääb ainult üks element astmega 1
-        // on tehte tulemuseks DerivedMeasure asemel BaseMeasure ja et kui 
-        // aste muutub nulliks, siis seda elementi ei ole.
-        // Kui jääb ainult üks element ja selle aste on null, siis peab aga tehte tulemus 
-        // olema Measure.Empty   
-
+            var m1 = new BaseMeasure("a");            
+            Measures.Instance.Add(m1);            
+            var m = m1.Reciprocal();
+            Assert.AreEqual("a^-1", m.Formula());
+        }        
     }
 }

@@ -42,6 +42,9 @@ namespace Logic.BaseClasses
             return list.Remove(item);
         }
 
+        public int RemoveAll(Predicate<T> match) {
+            return list.RemoveAll(match);
+        }
         public int Count => list.Count;
         public bool IsReadOnly { get; }
         public int IndexOf(T item) {

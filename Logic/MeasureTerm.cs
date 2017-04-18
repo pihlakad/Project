@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Aids;
+﻿using Aids;
 using Logic.BaseClasses;
-using Microsoft.Win32;
 
 namespace Logic
 {
     public class MeasureTerm: Archetype {
         private int power;
         private string measureId;       
-        public MeasureTerm() : this(null, 0)
+        public MeasureTerm() : this(null)
         {
         }
         public MeasureTerm(BaseMeasure m, int power = 0) {
-            m = m?? Measure.Empty as BaseMeasure;
-            measureId = m.UniqueId;
+            m = m ?? Measure.Empty as BaseMeasure;
+            if (m != null) measureId = m.UniqueId;
             this.power = power;
         }
         public string MeasureId

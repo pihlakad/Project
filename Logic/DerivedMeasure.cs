@@ -49,10 +49,8 @@ namespace Logic
             m.SetRandomValues();
             return m;
         }
-
        
-        protected override void SetRandomValues()
-        {
+        protected override void SetRandomValues(){
             base.SetRandomValues();
             terms = MeasureTerms.Random();
         }
@@ -60,14 +58,48 @@ namespace Logic
         public override string Formula(bool isLong = false) {
             return terms.Formula(isLong);
         }
-        
 
-        //TODO 17: Analogiliset BaseMeasure korrutamise, astendamise
-        // pöördväärtuse leidmise ja jagamise meetoditele tuleb
-        // defineerida meetodid DerivedMeasure jaoks ja need ka 
-        // testida
+        public Measure Multiply(DerivedMeasure d) {
+            var a = new MeasureTerms();
+            foreach (var e in Terms) {
+                a.Add(e);
+            }
+            foreach (var e in d.Terms) {
+                a.Add(e);
+            }
+            return new DerivedMeasure(a);             
+        }
 
-        //TODO 18: võiksite selle kõigega enne kokkusaaamist ... edu  
+        public Measure Divide(DerivedMeasure d) {
+            if (d == this) return Empty;
+            var a = new MeasureTerms();
+            foreach (var e in Terms) { a.Add(e); }
+            foreach (var e in d.Terms) {
+                e.Power = -e.Power;
+                a.Add(e);
+            }
+            a.RemoveAll(x => x.Power == 0);
+            return new DerivedMeasure(a);
+        }
+                
+        public Measure Exponentiation(int i) {
+            if (i == 0) return Empty;
+            var a = new MeasureTerms();
+            foreach (var e in Terms) {
+                e.Power = e.Power * i;
+                a.Add(e);
+            }
+            return new DerivedMeasure(a);
+        }
 
+        public Measure Reciprocal()
+        {
+            var a = new MeasureTerms();
+            foreach (var e in Terms) {
+                e.Power = e.Power * -1;
+                a.Add(e);
+            }
+            return new DerivedMeasure(a);
+        }
     }
 }
