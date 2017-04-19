@@ -62,11 +62,11 @@ namespace Logic {
         private double convertTo(double d, Unit u)
         {
             if (ReferenceEquals(null, u)) return double.NaN;
-            if (!isSameMeasure(u)) return double.NaN;
+            if (!IsSameMeasure(u)) return double.NaN;
             d = GetUnit.ToBase(d);
             return u.FromBase(d);
         }
-        private bool isSameMeasure(Unit u)
+        private bool IsSameMeasure(Unit u)
         {
             return GetUnit.GetMeasure.IsSameContent(u.GetMeasure);
         }

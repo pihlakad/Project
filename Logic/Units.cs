@@ -1,5 +1,4 @@
-﻿using System;
-using Aids;
+﻿using Aids;
 using Logic.BaseClasses;
 
 namespace Logic

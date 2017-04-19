@@ -12,16 +12,14 @@
             return m;
         }
         
-        public Measure Multiply(BaseMeasure m)
-        {
+        public Measure Multiply(BaseMeasure m) {
             var t1 = new MeasureTerm(this, 1);
             var t2 = new MeasureTerm(m, 1);
             var t = new MeasureTerms { t1, t2 };
             return new DerivedMeasure(t);
         }        
        
-        public Measure Multiply(DerivedMeasure m)
-        {
+        public Measure Multiply(DerivedMeasure m) {
             var t = new MeasureTerms();
             t.Add(new MeasureTerm(this, 1));
             foreach (var e in m.Terms)
@@ -31,8 +29,7 @@
             return new DerivedMeasure(t);
         }
        
-        public Measure Multiply(Measure m)
-        {
+        public Measure Multiply(Measure m) {
             if (m is DerivedMeasure) return Multiply(m as DerivedMeasure);
             return Multiply(m as BaseMeasure);
         }

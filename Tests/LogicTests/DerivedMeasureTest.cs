@@ -4,7 +4,7 @@ namespace Tests.LogicTests
 {
     [TestClass]
     public class DerivedMeasureTest : CommonTests<DerivedMeasure>
-    {
+        {
         private DerivedMeasure t;
         private BaseMeasure m1;
         private BaseMeasure m2;
