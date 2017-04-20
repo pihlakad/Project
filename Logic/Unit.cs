@@ -6,7 +6,13 @@ namespace Logic
         private string systemOfUnits;
         private string measure;
         private double factor;
-        public Unit(): this(null, 0, null, null) {}
+       // public Unit(): this(null, 0, null, null) {}
+
+        public Unit(string name, string symbol = null, string definition = null) : base(name, symbol, definition)
+        {
+        }
+
+        public Unit() : this(string.Empty) { }
 
         public Unit(Measure m, double factor, string symbol, string name): base(name, symbol) {
             m = m ?? Logic.Measure.Empty;
@@ -14,6 +20,9 @@ namespace Logic
             this.factor = factor;
         }
 
+       
+
+       
 
         public string SystemOfUnits {
             get { return Strings.EmptyIfNull(systemOfUnits); }
@@ -50,6 +59,24 @@ namespace Logic
             n.Factor = GetRandom.Double();
             n.SystemOfUnits = GetRandom.String();
             return n;
+        }
+
+        public Measure Exponentiation(int i) {
+            if (i == 0) return Logic.Measure.Empty;
+            UnitTerm t1;
+            if (i == 1)
+                t1 = new UnitTerm(this);
+            else {
+                t1 = new UnitTerm(this, i);
+                var  t = new UnitTerms();
+                return new DerivedMeasure();
+            }
+         }
+
+        public Measure Reciprocal() {
+            var t1 = new UnitTerm(this, -1);
+            var t = new UnitTerms();
+            return new DerivedMeasure();
         }
     }
 }
