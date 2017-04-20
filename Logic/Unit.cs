@@ -68,7 +68,7 @@ namespace Logic
                 t1 = new UnitTerm(this);
             else {
                 t1 = new UnitTerm(this, i);
-                var  t = new UnitTerms();
+                var  t = new UnitTerms {t1};
                 return new DerivedMeasure();
             }
          }
@@ -78,5 +78,6 @@ namespace Logic
             var t = new UnitTerms();
             return new DerivedMeasure();
         }
-    }
+
+      }
 }
