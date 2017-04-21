@@ -6,7 +6,13 @@ namespace Logic
         private string systemOfUnits;
         private string measure;
         private double factor;
-        public Unit(): this(null, 0, null, null) {}
+       // public Unit(): this(null, 0, null, null) {}
+
+        public Unit(string name, string symbol = null, string definition = null) : base(name, symbol, definition)
+        {
+        }
+
+        public Unit() : this(string.Empty) { }
 
         public Unit(Measure m, double factor, string symbol, string name): base(name, symbol) {
             m = m ?? Logic.Measure.Empty;
@@ -14,6 +20,9 @@ namespace Logic
             this.factor = factor;
         }
 
+       
+
+       
 
         public string SystemOfUnits {
             get { return Strings.EmptyIfNull(systemOfUnits); }
@@ -51,19 +60,5 @@ namespace Logic
             n.SystemOfUnits = GetRandom.String();
             return n;
         }
-
-        public bool IsThis(string id) {
-            {
-                if (IsSpaces(id)) return false;
-                if (UniqueId == id) return true;
-                if (Name == id) return true;
-                if (Symbol == id) return true;
-                if (!IsFormula(id)) return false;
-                if (Formula() == id) return true;
-                return Formula(true) == id;
-            }
-        }
-
-        public static bool IsFormula(string s) { return !IsNull(s) && s.Contains("^"); }
     }
 }

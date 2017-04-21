@@ -37,10 +37,10 @@ namespace Tests.LogicTests
         [TestMethod]
         public void MultiplyTest() {            
             var q = d1.Multiply(d3);
-            var s = d2.Multiply(d3);                              
+            var s = d2.Multiply(d3);
+            var d = d1.Multiply(d2);
             Assert.AreEqual("v^1*t^1*c^2", q.Formula());
             Assert.AreEqual("v^2*c^2", s.Formula());
-            var d = d1.Multiply(d2);
             Assert.AreEqual("v^3*t^1", d.Formula());
         }
 
@@ -53,8 +53,8 @@ namespace Tests.LogicTests
         [TestMethod]
         public void DivideTest() {
             var q = d1.Divide(d3);
-            Assert.AreEqual("v^1*t^1*c^-2", q.Formula());
             var s = d1.Divide(d2);
+            Assert.AreEqual("v^1*t^1*c^-2", q.Formula());            
             Assert.AreEqual("v^-1*t^1", s.Formula());            
         }
 

@@ -62,10 +62,12 @@ namespace Logic
         public Measure Multiply(DerivedMeasure d) {
             var a = new MeasureTerms();
             foreach (var e in Terms) {
-                a.Add(e);
+                var c = Clone(e);
+                a.Add(c);
             }
             foreach (var e in d.Terms) {
-                a.Add(e);
+                var c = Clone(e);
+                a.Add(c);
             }
             return new DerivedMeasure(a);             
         }
@@ -73,10 +75,14 @@ namespace Logic
         public Measure Divide(DerivedMeasure d) {
             if (d == this) return Empty;
             var a = new MeasureTerms();
-            foreach (var e in Terms) { a.Add(e); }
+            foreach (var e in Terms) {
+                var c = Clone(e);
+                a.Add(c);
+            }
             foreach (var e in d.Terms) {
-                e.Power = -e.Power;
-                a.Add(e);
+                var c = Clone(e);
+                c.Power = -c.Power;
+                a.Add(c);
             }
             a.RemoveAll(x => x.Power == 0);
             return new DerivedMeasure(a);
@@ -86,8 +92,9 @@ namespace Logic
             if (i == 0) return Empty;
             var a = new MeasureTerms();
             foreach (var e in Terms) {
-                e.Power = e.Power * i;
-                a.Add(e);
+                var c = Clone(e);
+                c.Power = c.Power * i;
+                a.Add(c);
             }
             return new DerivedMeasure(a);
         }
@@ -96,8 +103,9 @@ namespace Logic
         {
             var a = new MeasureTerms();
             foreach (var e in Terms) {
-                e.Power = e.Power * -1;
-                a.Add(e);
+                var c = Clone(e);
+                c.Power = c.Power * -1;
+                a.Add(c);
             }
             return new DerivedMeasure(a);
         }
