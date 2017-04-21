@@ -51,5 +51,19 @@ namespace Logic
             n.SystemOfUnits = GetRandom.String();
             return n;
         }
+
+        public bool IsThis(string id) {
+            {
+                if (IsSpaces(id)) return false;
+                if (UniqueId == id) return true;
+                if (Name == id) return true;
+                if (Symbol == id) return true;
+                if (!IsFormula(id)) return false;
+                if (Formula() == id) return true;
+                return Formula(true) == id;
+            }
+        }
+
+        public static bool IsFormula(string s) { return !IsNull(s) && s.Contains("^"); }
     }
 }

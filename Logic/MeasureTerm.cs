@@ -5,7 +5,7 @@ namespace Logic
 {
     public class MeasureTerm: Archetype {
         private int power;
-        private string measureId;       
+        protected string measureId;       
         public MeasureTerm() : this(null)
         {
         }
@@ -14,6 +14,7 @@ namespace Logic
             if (m != null) measureId = m.UniqueId;
             this.power = power;
         }
+
         public string MeasureId
         {
             get { return SetDefault(ref measureId); }

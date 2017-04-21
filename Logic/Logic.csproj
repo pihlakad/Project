@@ -72,6 +72,8 @@
     <Compile Include="UniqueEntity.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="Units.cs" />
+    <Compile Include="UnitTerm.cs" />
+    <Compile Include="UnitTerms.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aids\Aids.csproj">
