@@ -70,5 +70,18 @@ namespace Tests.LogicTests
             var m = m1.Reciprocal();
             Assert.AreEqual("a^-1",m.Formula());
         }
+
+        [TestMethod]
+
+        public void MultiplyTest()
+        {
+        }
+
+        [TestMethod]
+        public void DivideTest()
+        {
+        }
+
     }
+
 }

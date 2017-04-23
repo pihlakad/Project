@@ -76,5 +76,22 @@ namespace Logic
             var t = new UnitTerms();
             return new DerivedMeasure();
                     }
+
+        public Measure Multiply( int i)
+        {
+            var t1 = new UnitTerm(this, i);
+            var t = new UnitTerms();
+            return new DerivedMeasure();
+                    }
+
+        public Measure Divide (int i)
+        {
+            var t1 = new UnitTerm(this, i);
+            var t = new UnitTerms();
+            return new DerivedMeasure();
+        }
+
     }
 }
+
+
