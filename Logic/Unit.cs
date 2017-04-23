@@ -20,10 +20,6 @@ namespace Logic
             this.factor = factor;
         }
 
-       
-
-       
-
         public string SystemOfUnits {
             get { return Strings.EmptyIfNull(systemOfUnits); }
             set { systemOfUnits = value; }
@@ -60,5 +56,25 @@ namespace Logic
             n.SystemOfUnits = GetRandom.String();
             return n;
         }
+
+        public Measure Exponentiation(int i) {
+            if (i == 0) return Logic.Measure.Empty;
+            UnitTerm t1;
+            if (i == 1)
+                t1 = new UnitTerm(this);
+            else {
+                t1 = new UnitTerm(this, i);
+                var t = new UnitTerms();
+                
+            }
+            return new DerivedMeasure();
+        }
+
+        public Measure Reciprocal()
+        {
+            var t1 = new UnitTerm(this, -1);
+            var t = new UnitTerms();
+            return new DerivedMeasure();
+                    }
     }
 }
