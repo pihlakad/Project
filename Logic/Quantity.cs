@@ -23,7 +23,7 @@ namespace Logic {
             
         }
         public Quantity(double amount, Unit u) {
-            u = u ?? new Unit();
+            u = u ?? new BaseUnit();
             QuantityUnit = u.Symbol;
             Amount = amount;
         }

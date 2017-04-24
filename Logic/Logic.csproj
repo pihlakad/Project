@@ -47,10 +47,12 @@
     <Compile Include="BaseClasses\Period.cs" />
     <Compile Include="BaseClasses\Root.cs" />
     <Compile Include="BaseClasses\Serializable.cs" />
+    <Compile Include="BaseUnit.cs" />
     <Compile Include="DerivedMeasure.cs" />
     <Compile Include="BaseClasses\Archetype.cs" />
     <Compile Include="BaseClasses\Archetypes.cs" />
     <Compile Include="BaseMeasure.cs" />
+    <Compile Include="DerivedUnit.cs" />
     <Compile Include="MeasureTerm.cs" />
     <Compile Include="MeasureTerms.cs" />
     <Compile Include="Round.cs" />

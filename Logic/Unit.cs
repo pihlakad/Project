@@ -2,19 +2,19 @@
 
 namespace Logic
 {
-    public class Unit : Metric {
-        private string systemOfUnits;
-        private string measure;
-        private double factor;
+    public abstract class Unit : Metric {
+        protected string systemOfUnits;
+        protected string measure;
+        protected double factor;
        // public Unit(): this(null, 0, null, null) {}
 
-        public Unit(string name, string symbol = null, string definition = null) : base(name, symbol, definition)
+        protected Unit(string name, string symbol = null, string definition = null) : base(name, symbol, definition)
         {
         }
 
-        public Unit() : this(string.Empty) { }
+        protected Unit() : this(string.Empty) { }
 
-        public Unit(Measure m, double factor, string symbol, string name): base(name, symbol) {
+        protected Unit(Measure m, double factor, string symbol, string name): base(name, symbol) {
             m = m ?? Logic.Measure.Empty;
             measure = m.UniqueId;
             this.factor = factor;
@@ -35,9 +35,10 @@ namespace Logic
             set { factor = value; }
         }
 
-        public static Unit Empty { get; } = new Unit {isReadOnly = true};
+        public static Unit Empty { get; } = new BaseUnit {isReadOnly = true};
 
         public Measure GetMeasure => Measures.Find(Measure) ?? Logic.Measure.Empty;
+
         public void GetSystemOfUnits() {}
 
         public double ToBase(double amount) {
@@ -49,48 +50,13 @@ namespace Logic
         }
 
         public static Unit Random() {
-            var n = new Unit();
+            var n = new BaseUnit();
             n.SetRandomValues();
             n.Measure = GetRandom.String();
             n.Factor = GetRandom.Double();
             n.SystemOfUnits = GetRandom.String();
             return n;
-        }
-
-        public Measure Exponentiation(int i) {
-            if (i == 0) return Logic.Measure.Empty;
-            UnitTerm t1;
-            if (i == 1)
-                t1 = new UnitTerm(this);
-            else {
-                t1 = new UnitTerm(this, i);
-                var t = new UnitTerms();
-                
-            }
-            return new DerivedMeasure();
-        }
-
-        public Measure Reciprocal()
-        {
-            var t1 = new UnitTerm(this, -1);
-            var t = new UnitTerms();
-            return new DerivedMeasure();
-                    }
-
-        public Measure Multiply( int i)
-        {
-            var t1 = new UnitTerm(this, i);
-            var t = new UnitTerms();
-            return new DerivedMeasure();
-                    }
-
-        public Measure Divide (int i)
-        {
-            var t1 = new UnitTerm(this, i);
-            var t = new UnitTerms();
-            return new DerivedMeasure();
-        }
-
+        }        
     }
 }
 

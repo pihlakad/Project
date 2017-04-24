@@ -10,7 +10,7 @@ namespace Tests.LogicTests
         private Unit u;
         [TestInitialize]
         public void InitTests(){
-            u = new Unit();
+            u = new BaseUnit();
         }
 
         [TestCleanup]
@@ -49,7 +49,8 @@ namespace Tests.LogicTests
         }
 
         [TestMethod]
-        public void ExponentationTest() {
+        public void ExponentationTest()
+        {
             var m1 = new BaseMeasure("a");
             Measures.Instance.Add(m1);
             var m = m1.Exponentiation(5);
@@ -57,11 +58,26 @@ namespace Tests.LogicTests
             var c = m1.Exponentiation(0);
             var a = m1.Exponentiation(-5);
             Assert.AreEqual("a^5", m.Formula());
-            Assert.AreEqual("a",s.Formula());
+            Assert.AreEqual("a", s.Formula());
             Assert.AreEqual(Logic.Measure.Empty, c);
             Assert.AreEqual("a^-5", a.Formula());
-            
         }
+
+        //[TestMethod]
+        //public void ExponentationTest()
+        //{
+        //    var m1 = new BaseMeasure("a");
+        //    var u = new BaseUnit(m1, 1, "s", "pikkus");
+        //    Units.Instance.Add(u);
+        //    var m = u.Exponentiation(5);
+        //    var s = u.Exponentiation(1);
+        //    var c = u.Exponentiation(0);
+        //    var a = u.Exponentiation(-5);
+        //    Assert.AreEqual("s^5", m.Formula());
+        //    Assert.AreEqual("s", s.Formula());
+        //    Assert.AreEqual(Logic.Unit.Empty, c);
+        //    Assert.AreEqual("s^-5", a.Formula());
+        //}
 
         [TestMethod]
         public void ReciprocalTest() {

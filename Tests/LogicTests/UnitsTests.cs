@@ -4,7 +4,7 @@ using Logic;
 namespace Tests.LogicTests
 {
     [TestClass]
-    public class UnitsTests:CommonTests<Units>
+    public class UnitsTests: CommonTests<Units>
     {
         private Units unit;
         [TestInitialize]

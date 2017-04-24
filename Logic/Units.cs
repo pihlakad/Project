@@ -1,17 +1,23 @@
-﻿using Aids;
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
+using Aids;
 using Logic.BaseClasses;
 
 namespace Logic
 {
+    [KnownType(typeof(BaseUnit))]
+    [KnownType(typeof(DerivedUnit))]
+    [XmlInclude(typeof(BaseUnit))]
+    [XmlInclude(typeof(DerivedUnit))]
     public class Units : Archetypes<Unit>
-    {
+    {        
         public static Units Instance { get;  } = new Units();
 
         internal static Unit Add(Measure m, double factor, string symbol, string name = null)
         {
             var u = Instance.Find(x=> x.Measure == m.UniqueId && x.Symbol == symbol );
             if (u != null) return u;
-            u = new Unit(m, factor, symbol, name);
+            u = new BaseUnit(m, factor, symbol, name);
             Instance.Add(u);
             return u;
         }
@@ -20,7 +26,7 @@ namespace Logic
         {
             var u = Instance.Find(x => x.Measure == m.UniqueId && x.Symbol == symbol);
             if (u != null) return u;
-            u = new Unit(m, factor, symbol, name);
+            u = new BaseUnit(m, factor, symbol, name);
             Instance.Add(u);
             return u;
         }
