@@ -80,6 +80,7 @@
     <Compile Include="LogicTests\BaseClassesTests\RootTests.cs" />
     <Compile Include="LogicTests\BaseClassesTests\SerializableTests.cs" />
     <Compile Include="LogicTests\BaseMeasureTests.cs" />
+    <Compile Include="LogicTests\BaseUnitTests.cs" />
     <Compile Include="LogicTests\DerivedMeasureTest.cs" />
     <Compile Include="LogicTests\MeasuresTests.cs" />
     <Compile Include="LogicTests\MeasureTermTests.cs" />

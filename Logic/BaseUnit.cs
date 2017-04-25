@@ -14,43 +14,26 @@ namespace Logic
             this.factor = factor;
         }
 
-        public Measure Exponentiation(int i)
+        public Unit Exponentiation(int i)
         {
-            if (i == 0) return Logic.Measure.Empty;
+            if (i == 0) return Empty;
             UnitTerm t1;
             if (i == 1)
                 t1 = new UnitTerm(this);
             else
-            {
                 t1 = new UnitTerm(this, i);
-                var t = new UnitTerms();
-            }
-            return new DerivedMeasure();
+                var t = new UnitTerms {t1};
+                return new DerivedUnit(t);
+            
         }
-
-        //public Unit Exponentiation(int i) {
-        //    if (i == 0) return Empty;
-        //    UnitTerm t1;
-        //    if(i==1)
-        //        t1 = new UnitTerm(this);
-        //    else
-        //        t1 = new UnitTerm(this, i);
-        //    var t = new UnitTerms {t1};
-        //    return new DerivedUnit(t);
-        //}
-
-        public Measure Reciprocal()
+        
+        public Unit Reciprocal()
         {
             var t1 = new UnitTerm(this, -1);
-            var t = new UnitTerms();
-            return new DerivedMeasure();
+            var t = new UnitTerms {t1};
+            return new DerivedUnit(t);
         }
-        //public Unit Reciprocal()
-        //{
-        //    var t1 = new UnitTerm(this, -1);
-        //    var t = new UnitTerms { t1 };
-        //    return new DerivedUnit(t);
-        //}
+     
 
         public Measure Multiply(int i)
         {
