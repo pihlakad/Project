@@ -26,6 +26,7 @@ namespace Logic
             uniqueId = name;
         }
 
+      
         public Unit Exponentiation(int i) {
             if (i == 0) return Empty;
            var b = new UnitTerms();
@@ -34,7 +35,17 @@ namespace Logic
                 c.Power = c.Power * i;
                 b.Add(c);
             }
-            return new DerivedUnit();
+            return new DerivedUnit(b);
+        }
+
+        public Unit Reciprocal() {
+            var a= new UnitTerms();
+            foreach (var e in Terms) {
+                var c = Clone(e);
+                c.Power = c.Power * -1;
+                a.Add(c);
+                }
+            return new DerivedUnit(a);
         }
     }
 }

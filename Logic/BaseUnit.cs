@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace Logic
 {
     public class BaseUnit: Unit {
+        private string v;
+
         public BaseUnit() : this(Logic.Measure.Empty, 0, string.Empty, string.Empty) { }
         public BaseUnit(Measure m, double factor, string symbol, string name): base(name, symbol) {
             m = m ?? Logic.Measure.Empty;
@@ -14,7 +16,11 @@ namespace Logic
             this.factor = factor;
         }
 
-     
+        public BaseUnit(string v)
+        {
+            this.v = v;
+        }
+
         public Unit Exponentiation(int i)
         {
             if (i == 0) return Empty;

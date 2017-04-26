@@ -38,10 +38,21 @@ namespace Tests.LogicTests
         public void ExponentationTest() {
             var a = d1.Exponentiation(3);
             var b = d2.Exponentiation(5);
-            var c = d2.Exponentiation(0);
-            Assert.AreEqual();
+            var c = d3.Exponentiation(0);
+            Assert.AreEqual("k^3*p^3", a.Formula());
+            Assert.AreEqual("k^10", b.Formula());
+            Assert.AreEqual(Unit.Empty,c);
         }
 
+        [TestMethod]
+        public void ReciprocalTest() {
+            var a = d1.Reciprocal();
+            var b = d3.Reciprocal();
+            Assert.AreEqual("v^-1*t^-1", a.Formula());
+            Assert.AreEqual("c^-2", b.Formula());
+        }
+
+       
     }
 
   }
