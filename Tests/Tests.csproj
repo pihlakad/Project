@@ -82,6 +82,7 @@
     <Compile Include="LogicTests\BaseMeasureTests.cs" />
     <Compile Include="LogicTests\BaseUnitTests.cs" />
     <Compile Include="LogicTests\DerivedMeasureTest.cs" />
+    <Compile Include="LogicTests\DerivedUnitTests.cs" />
     <Compile Include="LogicTests\MeasuresTests.cs" />
     <Compile Include="LogicTests\MeasureTermTests.cs" />
     <Compile Include="LogicTests\MeasureTests.cs" />

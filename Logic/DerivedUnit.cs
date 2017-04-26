@@ -25,5 +25,16 @@ namespace Logic
             definition = name;
             uniqueId = name;
         }
+
+        public Unit Exponentiation(int i) {
+            if (i == 0) return Empty;
+           var b = new UnitTerms();
+            foreach (var e in Terms) {
+                var c = Clone(e);
+                c.Power = c.Power * i;
+                b.Add(c);
+            }
+            return new DerivedUnit();
+        }
     }
 }

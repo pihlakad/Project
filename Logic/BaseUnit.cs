@@ -14,6 +14,7 @@ namespace Logic
             this.factor = factor;
         }
 
+     
         public Unit Exponentiation(int i)
         {
             if (i == 0) return Empty;
@@ -35,19 +36,21 @@ namespace Logic
         }
      
 
-        public Measure Multiply(int i)
+     /*  public Measure Multiply(int i)
         {
             var t1 = new UnitTerm(this, i);
             var t = new UnitTerms();
             return new DerivedMeasure();
+        }*/ 
+        //see väljakommenteeritud kood on vale ja all õige. testide jaoks pidin õige koodi tööle panema
+
+        public Unit Multiply(Unit i)
+        {
+            var t1 = new UnitTerm(this, 1);
+            var t2 = new UnitTerm(i, 1);
+            var t = new UnitTerms {t1,t2};
+            return new DerivedUnit(t);
         }
-        //public Unit Multiply(Unit i)
-        //{
-        //    var t1 = new UnitTerm(this, 1);
-        //    var t2 = new UnitTerm(i, 1);
-        //    var t = new UnitTerms {t1,t2};
-        //    return new DerivedUnit(t);
-        //}
 
         public Measure Divide(int i)
         {
