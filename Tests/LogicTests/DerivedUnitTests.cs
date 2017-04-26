@@ -18,9 +18,9 @@ namespace Tests.LogicTests
         [TestInitialize]
         public void InitTests() {
             t = new DerivedUnit();
-            m1 = new BaseUnit();
-            m2 = new BaseUnit();
-            m3 = new BaseUnit();
+            m1 = new BaseUnit("v");
+            m2 = new BaseUnit("t");
+            m3 = new BaseUnit("c");
             Units.Instance.Add(m1);
             Units.Instance.Add(m2);
             Units.Instance.Add(m3);
@@ -39,8 +39,8 @@ namespace Tests.LogicTests
             var a = d1.Exponentiation(3);
             var b = d2.Exponentiation(5);
             var c = d3.Exponentiation(0);
-            Assert.AreEqual("k^3*p^3", a.Formula());
-            Assert.AreEqual("k^10", b.Formula());
+            Assert.AreEqual("v^3*t^3", a.Formula());
+            Assert.AreEqual("v^10", b.Formula());
             Assert.AreEqual(Unit.Empty,c);
         }
 

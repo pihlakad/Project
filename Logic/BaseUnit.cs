@@ -8,6 +8,7 @@ namespace Logic
 {
     public class BaseUnit: Unit {
         private string v;
+        private DerivedUnit m;
 
         public BaseUnit() : this(Logic.Measure.Empty, 0, string.Empty, string.Empty) { }
         public BaseUnit(Measure m, double factor, string symbol, string name): base(name, symbol) {
@@ -19,6 +20,14 @@ namespace Logic
         public BaseUnit(string v)
         {
             this.v = v;
+        }
+
+        public BaseUnit(DerivedUnit m, double factor, string symbol, string name)
+        {
+            this.m = m;
+            this.factor = factor;
+            this.symbol = symbol;
+            this.name = name;
         }
 
         public Unit Exponentiation(int i)

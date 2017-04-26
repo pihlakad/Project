@@ -23,6 +23,7 @@ namespace Logic {
             return m;
         }
 
+       
         internal static Measure Find(string measure) {
             return Instance.Find(x => x.UniqueId == measure);
         }

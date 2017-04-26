@@ -13,8 +13,8 @@ namespace Tests.LogicTests
        [TestMethod]
        public void ExponentationTest()
        {
-          var m1 = new BaseMeasure("a");
-          var u = new BaseUnit(m1, 1, "s", "pikkus");
+          var m1 = new BaseMeasure("s");
+         var u = new BaseUnit(m1, 1, "s", "pikkus");
           Units.Instance.Add(u);
           var m = u.Exponentiation(4);
           var s = u.Exponentiation(1);
