@@ -7,6 +7,8 @@ namespace Logic
     {       
         private int power;
         protected string unitId;
+        private Unit i;
+
         public UnitTerm() : this(null)
         {
         }
@@ -15,6 +17,11 @@ namespace Logic
             m = m ?? Unit.Empty;
             if (m != null) unitId = m.UniqueId;
             this.power = power;
+        }
+
+        public UnitTerm(Unit m, int power = 0, Unit i = null) : this(m, power)
+        {
+            this.i = i;
         }
 
         public string UnitId

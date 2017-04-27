@@ -50,14 +50,7 @@ namespace Logic
             return new DerivedUnit(t);
         }
      
-
-     /*  public Measure Multiply(int i)
-        {
-            var t1 = new UnitTerm(this, i);
-            var t = new UnitTerms();
-            return new DerivedMeasure();
-        }*/ 
-        //see väljakommenteeritud kood on vale ja all õige. testide jaoks pidin õige koodi tööle panema
+     
 
         public Unit Multiply(Unit i)
         {
@@ -67,19 +60,13 @@ namespace Logic
             return new DerivedUnit(t);
         }
 
-        public Measure Divide(int i)
+        public Measure Divide(Unit i)
         {
             var t1 = new UnitTerm(this, i);
-            var t = new UnitTerms();
-            return new DerivedMeasure();
+            var t2 = new UnitTerm(i, -1);
+            var t = new UnitTerms(t1, t2);
+            return new DerivedUnit();
         }
-
-        //public Unit Divide(Unit i) {
-        //    var t1= new UnitTerm(this, 1);
-        //    var t2 = new UnitTerm(i, -1);
-        //    var t = new UnitTerms { t1, t2 };
-        //    return new DerivedUnit(t);
-        //}
 
     }
 }
