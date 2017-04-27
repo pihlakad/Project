@@ -12,9 +12,9 @@
             return m;
         }
         
-        public Measure Multiply(BaseMeasure m) {
+        public Measure Multiply(BaseMeasure m, bool isDivide = false) {
             var t1 = new MeasureTerm(this, 1);
-            var t2 = new MeasureTerm(m, 1);
+            var t2 = isDivide? new MeasureTerm(m,-1) : new MeasureTerm(m, 1);
             var t = new MeasureTerms { t1, t2 };
             return new DerivedMeasure(t);
         }        
@@ -35,10 +35,8 @@
         }
 
         public Measure Divide(BaseMeasure m) {
-            var t1 = new MeasureTerm(this, 1);
-            var t2 = new MeasureTerm(m, -1);
-            var t = new MeasureTerms {t1, t2};
-            return new DerivedMeasure(t);
+            var s = Multiply(m, true);
+            return s;
         }
        
         public Measure Exponentiation(int i) {

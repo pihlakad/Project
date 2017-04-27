@@ -5,8 +5,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests.LogicTests
 {
     [TestClass]
-    public class DerivedUnitTests {
+    public class DerivedUnitTests : CommonTests<DerivedUnit> {
         private DerivedUnit t;
+        private BaseMeasure bm;
         private BaseUnit m1;
         private BaseUnit m2;
         private BaseUnit m3;
@@ -18,16 +19,17 @@ namespace Tests.LogicTests
         [TestInitialize]
         public void InitTests() {
             t = new DerivedUnit();
-            m1 = new BaseUnit("v");
-            m2 = new BaseUnit("t");
-            m3 = new BaseUnit("c");
+            bm = new BaseMeasure("a");
+            m1 = new BaseUnit(bm, 1, "s", "pikkus");
+            m2 = new BaseUnit(bm, 1, "t", "aeg");
+            m3 = new BaseUnit(bm, 1, "k", "midagi");
             Units.Instance.Add(m1);
             Units.Instance.Add(m2);
             Units.Instance.Add(m3);
-            d1 = (DerivedUnit) m1.Multiply(m2);
-            d2 = (DerivedUnit) m1.Multiply(m3);
-            d3 = (DerivedUnit) m2.Multiply(m3);
-            d4 = (DerivedUnit) m3.Multiply(m3);
+            d1 = (DerivedUnit) m1.Multiply(m2);//s1*t1
+            d2 = (DerivedUnit) m1.Multiply(m3);//s1*k1
+            d3 = (DerivedUnit) m2.Multiply(m3);//t1*k1
+            d4 = (DerivedUnit) m3.Multiply(m3);//k2
             
         }
 
@@ -35,25 +37,65 @@ namespace Tests.LogicTests
         public void CleanTests() {t = null;}
 
         [TestMethod]
+        public void ConstructorTest() { Assert.IsNotNull(t);}
+
+        [TestMethod]
         public void ExponentationTest() {
             var a = d1.Exponentiation(3);
             var b = d2.Exponentiation(5);
             var c = d3.Exponentiation(0);
-            Assert.AreEqual("v^3*t^3", a.Formula());
-            Assert.AreEqual("v^10", b.Formula());
+            var d = d4.Exponentiation(2);
+            Assert.AreEqual("s^3*t^3", a.Formula());
+            Assert.AreEqual("s^5*k^5", b.Formula());
             Assert.AreEqual(Unit.Empty,c);
+            Assert.AreEqual("k^4", d.Formula());
         }
 
         [TestMethod]
         public void ReciprocalTest() {
             var a = d1.Reciprocal();
-            var b = d3.Reciprocal();
-            Assert.AreEqual("v^-1*t^-1", a.Formula());
-            Assert.AreEqual("c^-2", b.Formula());
+            var b = d4.Reciprocal();
+            Assert.AreEqual("s^-1*t^-1", a.Formula());
+            Assert.AreEqual("k^-2", b.Formula());
         }
 
-       
-    }
+        [TestMethod]
+        public void MultiplyTest()
+        {
+            var q = d1.Multiply(d3);
+            var s = d2.Multiply(d3);
+            var d = d1.Multiply(d2);
+            Assert.AreEqual("s^1*t^2*k^1", q.Formula());
+            Assert.AreEqual("s^1*k^2*t^1", s.Formula());
+            Assert.AreEqual("s^2*t^1*k^1", d.Formula());
+        }
 
+        [TestMethod]
+        public void MultiplySameDerivedUnits()
+        {
+            var q = d1.Multiply(d1);
+            Assert.AreEqual("s^2*t^2", q.Formula());
+        }
+
+        [TestMethod]
+        public void DivideTest()
+        {
+            var q = d1.Divide(d3);
+            var s = d1.Divide(d2);
+            Assert.AreEqual("s^1*k^-1", q.Formula());
+            Assert.AreEqual("t^1*k^-1", s.Formula());
+        }
+
+        [TestMethod]
+        public void DivideSameDerivedUnits()
+        {
+            var q = d1.Divide(d1);
+            Assert.AreEqual(Unit.Empty, q);
+        }
+
+        protected override DerivedUnit getRandomObj() {
+            return DerivedUnit.Random();
+        }
+    }
   }
 

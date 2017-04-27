@@ -1,8 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Logic;
 
 namespace Tests.LogicTests
-{
+{    
     [TestClass]
     public class UnitsTests: CommonTests<Units>
     {

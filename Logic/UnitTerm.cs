@@ -12,17 +12,17 @@ namespace Logic
         public UnitTerm() : this(null)
         {
         }
-        public UnitTerm(Unit m, int power = 0)
+        public UnitTerm(BaseUnit m, int power = 0)
         {
-            m = m ?? Unit.Empty;
+            m = m ?? Unit.Empty as BaseUnit;
             if (m != null) unitId = m.UniqueId;
             this.power = power;
         }
 
-        public UnitTerm(Unit m, int power = 0, Unit i = null) : this(m, power)
-        {
-            this.i = i;
-        }
+        //public UnitTerm(Unit m, int power = 0, Unit i = null) : this(m, power)
+        //{
+        //    this.i = i;
+        //}
 
         public string UnitId
         {

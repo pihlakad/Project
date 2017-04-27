@@ -5,14 +5,14 @@ namespace Logic
 {
     public class UnitTerms: Archetypes<UnitTerm>
     {
-        private UnitTerm t1;
-        private UnitTerm t2;
+        //private UnitTerm t1;
+        //private UnitTerm t2;
 
-        public UnitTerms(UnitTerm t1, UnitTerm t2)
-        {
-            this.t1 = t1;
-            this.t2 = t2;
-        }
+        //public UnitTerms(UnitTerm t1, UnitTerm t2)
+        //{
+        //    this.t1 = t1;
+        //    this.t2 = t2;
+        //}
 
         public string Formula(bool isLong = false)
         {

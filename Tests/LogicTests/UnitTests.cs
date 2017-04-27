@@ -43,9 +43,9 @@ namespace Tests.LogicTests
         public void Measure(){
             Assert.IsNotNull(u.Measure);
             u.Measure = null;
-            Assert.AreEqual(String.Empty, u.Measure);
-            u.Measure = "Some Measure";
-            Assert.AreEqual("Some Measure", u.Measure);
+            Assert.AreEqual(Logic.Measure.Empty, u.Measure);
+            u.Measure = new BaseMeasure("a");
+            Assert.AreEqual("a", u.Measure.Name);
         }
 
   

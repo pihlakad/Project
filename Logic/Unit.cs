@@ -4,7 +4,7 @@ namespace Logic
 {
     public abstract class Unit : Metric {
         protected string systemOfUnits;
-        protected string measure;
+        protected Measure measure;
         protected double factor;
        // public Unit(): this(null, 0, null, null) {}
 
@@ -16,7 +16,7 @@ namespace Logic
 
         protected Unit(Measure m, double factor, string symbol, string name): base(name, symbol) {
             m = m ?? Logic.Measure.Empty;
-            measure = m.UniqueId;
+            measure = m;
             this.factor = factor;
         }
 
@@ -25,8 +25,8 @@ namespace Logic
             set { systemOfUnits = value; }
         }
 
-        public string Measure {
-            get { return Strings.EmptyIfNull(measure); }
+        public Measure Measure {
+            get { return measure?? Measure.Empty; }
             set { measure = value; }
         }
 
@@ -37,7 +37,7 @@ namespace Logic
 
         public static Unit Empty { get; } = new BaseUnit {isReadOnly = true};
 
-        public Measure GetMeasure => Measures.Find(Measure) ?? Logic.Measure.Empty;
+        public Measure GetMeasure => Measures.Find(Measure.Name) ?? Logic.Measure.Empty;
 
         public void GetSystemOfUnits() {}
 
@@ -52,7 +52,7 @@ namespace Logic
         public static Unit Random() {
             var n = new BaseUnit();
             n.SetRandomValues();
-            n.Measure = GetRandom.String();
+            n.Measure = Measure.Random();
             n.Factor = GetRandom.Double();
             n.SystemOfUnits = GetRandom.String();
             return n;
