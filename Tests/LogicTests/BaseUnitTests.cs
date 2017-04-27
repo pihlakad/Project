@@ -11,6 +11,7 @@ namespace Tests.LogicTests
        public void ExponentationTest()
        {
           var m1 = new BaseMeasure("a");
+          Measures.Instance.Add(m1);
           var u = new BaseUnit(m1, 1, "s", "pikkus");
           Units.Instance.Add(u);
           var m = u.Exponentiation(4);

@@ -1,9 +1,10 @@
 ﻿using System;
 using Aids;
 using Logic;
+using Logic.BaseClasses;
 
 namespace Logic {
-    public sealed class Quantity {
+        public sealed class Quantity: Archetype {
         private double amount;
         private string quantityUnit;
 
@@ -98,11 +99,13 @@ namespace Logic {
         {
             var u1 = GetUnit;
             var u2 = q.GetUnit;
-            if (u1.Measure != u2.Measure) return new Quantity(0, u1);
+            if (u1.Measure != u2.Measure) return Empty;
             var a = GetUnit.ToBase(amount);
             a = a + q.GetUnit.ToBase(q.amount);
             return new Quantity(q.GetUnit.FromBase(a), q.GetUnit);
         }
+
+        public static Quantity Empty { get; } = new Quantity {isReadOnly = true};
 
         public Quantity Divide(Quantity q)
         {
@@ -138,5 +141,8 @@ namespace Logic {
                     return Logic.Round.Off(d, p.Decimals, p.Digit);
             }
         }
+        //TODO 1: 
+        //teha nii, et quantity meetodid tagastaksid uue quantity ja UNITI. Lisada FactoredUnit
+        //Klass, kuhu läheb Unit factor sisse(et see kaotada unitist).
     }
 }
