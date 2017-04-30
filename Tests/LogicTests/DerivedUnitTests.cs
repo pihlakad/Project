@@ -1,5 +1,4 @@
-﻿using System;
-using Logic;
+﻿using Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.LogicTests
@@ -7,7 +6,9 @@ namespace Tests.LogicTests
     [TestClass]
     public class DerivedUnitTests : CommonTests<DerivedUnit> {
         private DerivedUnit t;
-        private BaseMeasure bm;
+        private BaseMeasure bm1;
+        private BaseMeasure bm2;
+        private BaseMeasure bm3;
         private BaseUnit m1;
         private BaseUnit m2;
         private BaseUnit m3;
@@ -19,10 +20,15 @@ namespace Tests.LogicTests
         [TestInitialize]
         public void InitTests() {
             t = new DerivedUnit();
-            bm = new BaseMeasure("a");
-            m1 = new BaseUnit(bm, 1, "s", "pikkus");
-            m2 = new BaseUnit(bm, 1, "t", "aeg");
-            m3 = new BaseUnit(bm, 1, "k", "midagi");
+            bm1 = new BaseMeasure("pk");
+            bm2 = new BaseMeasure("ae");
+            bm3 = new BaseMeasure("mi");
+            Measures.Instance.Add(bm1);
+            Measures.Instance.Add(bm2);
+            Measures.Instance.Add(bm3);        
+            m1 = new BaseUnit(bm1, 1, "s", "pikkus");
+            m2 = new BaseUnit(bm2, 1, "t", "aeg");
+            m3 = new BaseUnit(bm3, 1, "k", "midagi");
             Units.Instance.Add(m1);
             Units.Instance.Add(m2);
             Units.Instance.Add(m3);
@@ -34,17 +40,30 @@ namespace Tests.LogicTests
         }
 
         [TestCleanup]
-        public void CleanTests() {t = null;}
+        public void CleanTests() {
+            t = null;
+            bm1 = null;
+            bm2 = null;
+            bm3 = null;
+            m1 = null;
+            m2 = null;
+            m3 = null;
+            d1 = null;
+            d2 = null;
+            d3 = null;
+            d4 = null;
+        }
 
         [TestMethod]
         public void ConstructorTest() { Assert.IsNotNull(t);}
 
         [TestMethod]
-        public void ExponentationTest() {
+        public void ExponentationTest() {            
             var a = d1.Exponentiation(3);
             var b = d2.Exponentiation(5);
             var c = d3.Exponentiation(0);
             var d = d4.Exponentiation(2);
+            Assert.AreEqual("pk^3*ae^3", a.Measure.Name);
             Assert.AreEqual("s^3*t^3", a.Formula());
             Assert.AreEqual("s^5*k^5", b.Formula());
             Assert.AreEqual(Unit.Empty,c);
@@ -55,6 +74,7 @@ namespace Tests.LogicTests
         public void ReciprocalTest() {
             var a = d1.Reciprocal();
             var b = d4.Reciprocal();
+            Assert.AreEqual("pk^-1*ae^-1", a.Measure.Name);
             Assert.AreEqual("s^-1*t^-1", a.Formula());
             Assert.AreEqual("k^-2", b.Formula());
         }
@@ -65,6 +85,7 @@ namespace Tests.LogicTests
             var q = d1.Multiply(d3);
             var s = d2.Multiply(d3);
             var d = d1.Multiply(d2);
+            Assert.AreEqual("pk^1*ae^2*mi^1", q.Measure.Name);
             Assert.AreEqual("s^1*t^2*k^1", q.Formula());
             Assert.AreEqual("s^1*k^2*t^1", s.Formula());
             Assert.AreEqual("s^2*t^1*k^1", d.Formula());
@@ -82,6 +103,7 @@ namespace Tests.LogicTests
         {
             var q = d1.Divide(d3);
             var s = d1.Divide(d2);
+            Assert.AreEqual("pk^1*mi^-1", q.Measure.Name);
             Assert.AreEqual("s^1*k^-1", q.Formula());
             Assert.AreEqual("t^1*k^-1", s.Formula());
         }

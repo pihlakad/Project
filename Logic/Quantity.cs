@@ -7,28 +7,27 @@ namespace Logic {
         public sealed class Quantity: Archetype {
         private double amount;
         private string quantityUnit;
+        public Quantity() : this(0, null){ }
+        public Quantity(double amount, Unit u){
+            u = u ?? new BaseUnit();
+            QuantityUnit = u.Symbol;
+            Amount = amount;
+        }
 
         public string QuantityUnit {
             get { return Strings.EmptyIfNull(quantityUnit); }
             set { quantityUnit = value; }
         }
 
-        public Unit GetUnit => Units.Find(QuantityUnit);
-        public double Amount
-        {
+        public double Amount{
             get { return amount; }
             set { amount = value; }
         }
 
-        public Quantity(): this(0, null) {
-            
-        }
-        public Quantity(double amount, Unit u) {
-            u = u ?? new BaseUnit();
-            QuantityUnit = u.Symbol;
-            Amount = amount;
-        }
+        public static Quantity Empty { get; } = new Quantity { isReadOnly = true };
 
+        public Unit GetUnit => Units.Find(QuantityUnit);
+               
         public bool IsEqual(Quantity q) {
             var u1 = GetUnit;
             var u2 = q.GetUnit;
@@ -57,10 +56,10 @@ namespace Logic {
         public Quantity ConvertTo(Unit u)
         {
             u = u ?? Unit.Empty;
-            var d = convertTo(amount, u);
+            var d = ConvertTo(amount, u);
             return new Quantity(d, u);
         }
-        private double convertTo(double d, Unit u)
+        private double ConvertTo(double d, Unit u)
         {
             if (ReferenceEquals(null, u)) return double.NaN;
             if (!IsSameMeasure(u)) return double.NaN;
@@ -75,7 +74,7 @@ namespace Logic {
         public Quantity Add(Quantity q) {
             var u1 = GetUnit;
             var u2 = q.GetUnit;
-            if (u1.Measure != u2.Measure) return new Quantity(0, u1);
+            if (u1.Measure != u2.Measure) return Empty;            
             var a = GetUnit.ToBase(amount);
             a = a + q.GetUnit.ToBase(q.amount);
             return new Quantity(q.GetUnit.FromBase(a), q.GetUnit);
@@ -85,9 +84,9 @@ namespace Logic {
         {
             var u1 = GetUnit;
             var u2 = q.GetUnit;
-            if (u1.Measure != u2.Measure) return new Quantity(0, u1);
+            if (u1.Measure != u2.Measure) return Empty;
             var a = GetUnit.ToBase(amount);
-            a = a + q.GetUnit.ToBase(q.amount);
+            a = a - q.GetUnit.ToBase(q.amount);
             return new Quantity(q.GetUnit.FromBase(a), q.GetUnit);
         }
 
@@ -97,24 +96,24 @@ namespace Logic {
 
         public Quantity Multiply(Quantity q)
         {
-            var u1 = GetUnit;
-            var u2 = q.GetUnit;
+            var u1 = (DerivedUnit)GetUnit;
+            var u2 = (DerivedUnit)q.GetUnit;
             if (u1.Measure != u2.Measure) return Empty;
+            var u = u1.Multiply(u2);
             var a = GetUnit.ToBase(amount);
-            a = a + q.GetUnit.ToBase(q.amount);
-            return new Quantity(q.GetUnit.FromBase(a), q.GetUnit);
+            a = a * q.GetUnit.ToBase(q.amount);
+            return new Quantity(q.GetUnit.FromBase(a), u);
         }
-
-        public static Quantity Empty { get; } = new Quantity {isReadOnly = true};
-
+        
         public Quantity Divide(Quantity q)
         {
-            var u1 = GetUnit;
-            var u2 = q.GetUnit;
-            if (u1.Measure != u2.Measure) return new Quantity(0, u1);
+            var u1 = (DerivedUnit)GetUnit;
+            var u2 = (DerivedUnit)q.GetUnit;
+            if (u1.Measure != u2.Measure) return Empty;
+            var u = u1.Divide(u2);
             var a = GetUnit.ToBase(amount);
-            a = a + q.GetUnit.ToBase(q.amount);
-            return new Quantity(q.GetUnit.FromBase(a), q.GetUnit);
+            a = a / q.GetUnit.ToBase(q.amount);
+            return new Quantity(q.GetUnit.FromBase(a), u);
         }
         public Quantity Round(Rounding policy)
         {
@@ -144,5 +143,13 @@ namespace Logic {
         //TODO 1: 
         //teha nii, et quantity meetodid tagastaksid uue quantity ja UNITI. Lisada FactoredUnit
         //Klass, kuhu läheb Unit factor sisse(et see kaotada unitist).
+
+        public static Quantity Random() {
+            var r = new Quantity();
+            r.SetRandomValues();
+            r.amount = GetRandom.Double();
+            r.quantityUnit = GetRandom.String();
+            return r;
+        }
     }
 }
