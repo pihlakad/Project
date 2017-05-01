@@ -14,7 +14,8 @@ namespace Logic
 
         protected Unit() : this(string.Empty) { }
 
-        protected Unit(Measure m, double factor, string symbol, string name): base(name, symbol) {
+        protected Unit(Measure m, double factor, string symbol, string name) : base(name, symbol)
+        {
             m = m ?? Logic.Measure.Empty;
             measure = m;
             this.factor = factor;
