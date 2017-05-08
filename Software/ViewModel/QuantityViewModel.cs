@@ -22,7 +22,8 @@ namespace Software.ViewModel
             set { resultQuantity = value; }
         }
 
-        public string Measure {
+        public string Measure
+        {
             get { return measure; }
             set { measure = value; }
         }
@@ -31,5 +32,6 @@ namespace Software.ViewModel
             get { return selectedOperation; }
             set { selectedOperation = value; }
         }       
+        public string ResultAmount { get; set; }
     }
 }
