@@ -100,11 +100,11 @@ namespace Logic {
             if (q.GetUnit is DerivedUnit) {
                 var u1 = (DerivedUnit) b.GetUnit;
                 var u2 = (DerivedUnit) q.GetUnit;
-                u = isDivide? Logic.Unit.Empty : u1.Multiply(u2);
+                u = isDivide? u1.Divide(u2) : u1.Multiply(u2);
             } else {
                 var u1 = (BaseUnit)b.GetUnit;
                 var u2 = (BaseUnit) q.GetUnit;                         
-                u = isDivide ? Logic.Unit.Empty: u1.Multiply(u2);
+                u = isDivide ? u1.Divide(u2) : u1.Multiply(u2);
             }
             var a = isDivide ? b.Amount/q.Amount : b.Amount* q.Amount;            
             return new Quantity(a, u);

@@ -151,9 +151,9 @@ namespace Tests.LogicTests {
             var b = quantity3.Divide(quantity1);
             var c = quantity1.Divide(quantity2);
             Assert.AreEqual(0.0005, a.Amount);
-            Assert.AreEqual(Unit.Empty.Name, a.Unit);
+            Assert.AreEqual("kilomeeter", a.Unit);
             Assert.AreEqual(2000, b.Amount);
-            Assert.AreEqual(Unit.Empty.Name, b.Unit);
+            Assert.AreEqual("meeter", b.Unit);
             Assert.AreEqual(Quantity.Empty, c);
         }
 
