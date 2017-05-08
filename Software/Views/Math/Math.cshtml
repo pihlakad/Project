@@ -5,7 +5,7 @@
 <script src="~/Scripts/ShowItems.js"></script>
 <h2>Quantity Details</h2>
 
-<body onload="CheckItems()">
+
     @using (Html.BeginForm("Result", "Math", FormMethod.Post))
     {
         <div class="form-horizontal">
@@ -23,7 +23,7 @@
                 @Html.LabelFor(c => c.QuantityList[0].Unit)
                 @Html.TextBoxFor(x => x.QuantityList[0].Unit)
             </div>
-            <div id="SecondQuantity" class="form-group" style="display: none">
+            <div id="SecondQuantity" class="form-group">
                 @Html.LabelFor(c => c.QuantityList[1].Amount)
                 @Html.TextBoxFor(x => x.QuantityList[1].Amount)
                 @Html.LabelFor(c => c.QuantityList[1].Unit)
@@ -33,6 +33,6 @@
         </div>
     }
     <label id="ResultLabel">
-        Result : @Model.ResultQuantity.Amount @Model.ResultQuantity.Unit
+        Result : @Model.ResultAmount @Model.ResultQuantity.Unit
     </label>
-</body>
+

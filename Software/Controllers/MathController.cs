@@ -19,8 +19,8 @@ namespace Software.Controllers
         public ActionResult Result(QuantityViewModel quantity) {
             var m = new BaseMeasure(quantity.Measure);
             Measures.Instance.Add(m);
-            var u1 = new BaseUnit(m, 1, quantity.QuantityList[0].Unit, quantity.QuantityList[0].Unit);
-            var u2 = new BaseUnit(m, 1, quantity.QuantityList[1].Unit, quantity.QuantityList[1].Unit);
+            var u1 = new BaseUnit(m, Unit.SetFactor(quantity.QuantityList[0].Unit), quantity.QuantityList[0].Unit, quantity.QuantityList[0].Unit);
+            var u2 = new BaseUnit(m, Unit.SetFactor(quantity.QuantityList[1].Unit), quantity.QuantityList[1].Unit, quantity.QuantityList[1].Unit);
             Units.Instance.Add(u1);
             Units.Instance.Add(u2);
             var q1 = new Quantity(quantity.QuantityList[0].Amount, u1);
@@ -32,7 +32,10 @@ namespace Software.Controllers
             else if (quantity.SelectedOperation == "Multiply")
                 quantity.ResultQuantity = q1.Multiply(q2);
             else quantity.ResultQuantity = q1.Divide(q2);
+            quantity.ResultAmount = quantity.ResultQuantity.Amount.ToString();
             return View("Math", quantity);
         }
+        //TODO Tuleks lisada uus kalkulaatori view ja controller, mis suudaksid teha tehteid derived unititega. Kasutajale võiks anda võimaluse valida mitu liiget
+        //ta soobib ja tema ül oleks ainult kirjutada powerid koos märgia.
     }
 }

@@ -53,6 +53,7 @@
     <Compile Include="BaseClasses\Archetypes.cs" />
     <Compile Include="BaseMeasure.cs" />
     <Compile Include="DerivedUnit.cs" />
+    <Compile Include="Factors.cs" />
     <Compile Include="MeasureTerm.cs" />
     <Compile Include="MeasureTerms.cs" />
     <Compile Include="Round.cs" />
