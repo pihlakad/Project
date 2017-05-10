@@ -6,7 +6,7 @@ using Logic;
 
 namespace Software.ViewModel
 {
-    public class QuantityViewModel {
+    public class MathViewModel {
         private List<Quantity> quantityList;
         private Quantity resultQuantity = Quantity.Empty;
         private string measure;
@@ -32,6 +32,6 @@ namespace Software.ViewModel
             get { return selectedOperation; }
             set { selectedOperation = value; }
         }       
-        public string ResultAmount { get; set; }
+        public string ResultAmount { get; set; }        
     }
 }

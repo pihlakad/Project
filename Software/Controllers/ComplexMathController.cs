@@ -1,22 +1,24 @@
-﻿using Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Logic;
 using Software.ViewModel;
 
 namespace Software.Controllers
 {
-    public class MathController : Controller {                
+    public class ComplexMathController : Controller
+    {
         public ActionResult Index()
-        {                    
-            var q = new MathViewModel();                
+        {
+            var q = new ComplexMathViewModel();
             return View("Index", q);
         }
 
         [HttpPost]
-        public ActionResult Result(MathViewModel quantity) {
+        public ActionResult Result(ComplexMathViewModel quantity)
+        {
             var m = new BaseMeasure(quantity.Measure);
             Measures.Instance.Add(m);
             var u1 = new BaseUnit(m, Unit.SetFactor(quantity.QuantityList[0].Unit), quantity.QuantityList[0].Unit, quantity.QuantityList[0].Unit);
@@ -35,7 +37,5 @@ namespace Software.Controllers
             quantity.ResultAmount = quantity.ResultQuantity.Amount.ToString();
             return View("Index", quantity);
         }
-        //TODO Tuleks lisada uus kalkulaatori view ja controller, mis suudaksid teha tehteid derived unititega. Kasutajale võiks anda võimaluse valida mitu liiget
-        //ta soobib ja tema ül oleks ainult kirjutada powerid koos märgia.
     }
 }
