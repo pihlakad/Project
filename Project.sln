@@ -10,12 +10,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{40666471-96DA-4505-A4B3-C37D9FDDD3C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B3A55CC1-D2E1-407E-99F4-24A4D062E7D3} = {B3A55CC1-D2E1-407E-99F4-24A4D062E7D3}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{759C1B54-12B9-49A2-BA42-81DCCBD23B26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aids", "Aids\Aids.csproj", "{F5F5804F-6EE7-4745-8323-826F76B3E0B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Software", "Software\Software.csproj", "{B3A55CC1-D2E1-407E-99F4-24A4D062E7D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{40E52546-BD01-4475-B90D-E236A1556007}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +44,10 @@ Global
 		{B3A55CC1-D2E1-407E-99F4-24A4D062E7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3A55CC1-D2E1-407E-99F4-24A4D062E7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3A55CC1-D2E1-407E-99F4-24A4D062E7D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E52546-BD01-4475-B90D-E236A1556007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E52546-BD01-4475-B90D-E236A1556007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E52546-BD01-4475-B90D-E236A1556007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E52546-BD01-4475-B90D-E236A1556007}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
