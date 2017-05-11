@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 namespace Logic{
@@ -25,7 +26,9 @@ namespace Logic{
             var t = new UnitTerms {t1};
             var a = new DerivedUnit(t);
             var b  = (BaseMeasure)this.measure;            
-            a.Measure = b.Exponentiation(i);
+            a.Measure = b.Exponentiation(i);            
+            a.Factor = Math.Pow(Factor, i);
+            Measures.Instance.Add(a.Measure);
             return a;            
         }
         

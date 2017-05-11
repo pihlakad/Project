@@ -73,7 +73,7 @@ namespace Logic {
         public Quantity Add(Quantity q) {
             var u1 = GetUnit;
             var u2 = q.GetUnit;
-            if (u1.Measure != u2.Measure) return Empty;            
+            if (u1.Measure.Name != u2.Measure.Name) return Empty;            
             var a = GetUnit.ToBase(amount);
             a = a + q.GetUnit.ToBase(q.amount);
             return new Quantity(q.GetUnit.FromBase(a), q.GetUnit);
@@ -83,7 +83,7 @@ namespace Logic {
         {
             var u1 = GetUnit;
             var u2 = q.GetUnit;
-            if (u1.Measure != u2.Measure) return Empty;
+            if (u1.Measure.Name != u2.Measure.Name) return Empty;
             var a = GetUnit.ToBase(amount);
             a = a - q.GetUnit.ToBase(q.amount);
             return new Quantity(q.GetUnit.FromBase(a), q.GetUnit);
@@ -94,7 +94,7 @@ namespace Logic {
         public Quantity Divide(double a) { return new Quantity(Amount / a, GetUnit); }
 
         public Quantity Multiply(Quantity q, bool isDivide = false) {                        
-            if (GetUnit.Measure != q.GetUnit.Measure) return Empty;
+            if (GetUnit.Measure.Name != q.GetUnit.Measure.Name) return Empty;
             var b = Convert(q.GetUnit);
             Unit u;
             if (q.GetUnit is DerivedUnit) {

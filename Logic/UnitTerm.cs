@@ -7,7 +7,7 @@ namespace Logic
     {       
         private int power;
         protected string unitId;
-        private Unit i;
+        //private Unit i;
 
         public UnitTerm() : this(null)
         {

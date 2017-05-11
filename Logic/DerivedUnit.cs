@@ -91,6 +91,7 @@ namespace Logic
             var b = new DerivedUnit(a);
             var f = (DerivedMeasure) measure;
             b.measure = isDivide? f.Divide((DerivedMeasure) d.measure): f.Multiply((DerivedMeasure) d.measure);
+            b.Factor = Factor * d.Factor;
             return b;
         }
 
