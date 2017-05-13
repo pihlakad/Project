@@ -6,20 +6,12 @@ namespace Logic
         protected string systemOfUnits;
         protected Measure measure;
         protected double factor;
-       // public Unit(): this(null, 0, null, null) {}
 
         protected Unit(string name, string symbol = null, string definition = null) : base(name, symbol, definition)
         {
         }
 
         protected Unit() : this(string.Empty) { }
-
-        protected Unit(Measure m, double factor, string symbol, string name) : base(name, symbol)
-        {
-            m = m ?? Logic.Measure.Empty;
-            measure = m;
-            this.factor = factor;
-        }
 
         public string SystemOfUnits {
             get { return Strings.EmptyIfNull(systemOfUnits); }
@@ -65,7 +57,7 @@ namespace Logic
             if (firstLetter == "μ") return Factors.Micro;
             if (firstLetter == "n") return Factors.Nano;
             if (firstLetter == "p") return Factors.Pico;            
-            return double.NaN;
+            return 1;
         }
 
         public static Unit Random() {
