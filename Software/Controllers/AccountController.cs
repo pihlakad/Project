@@ -135,6 +135,13 @@ namespace Software.Controllers
             }
         }
 
+        [AllowAnonymous]
+        public ActionResult Register()
+        {
+            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+            return View();
+        }
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -155,6 +162,34 @@ namespace Software.Controllers
 
              return View(model);
         }
+
+        //GET
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult RegisterRole() {
+            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+            ViewBag.UserName = new SelectList(context.Users.ToList(), "UserName", "UserName");
+            return View();
+
+        }
+
+        //POST: /Account/Register
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RegisterRole(RegisterViewModel model, ApplicationUser user) {
+            var userId = context.Users.Where(i => i.UserName == user.UserName).Select(s => s.Id);
+            string updateId = "";
+            foreach (var i in userId) {
+                updateId = i.ToString();
+
+            }
+            await this.UserManager.AddToRoleAsync(updateId, model.Name);
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
 
         //
         // GET: /Account/ConfirmEmail
