@@ -31,28 +31,18 @@ namespace Software.Controllers
                 Units.Instance.Add(derivedUnit);
                 derivedUnits.Add(derivedUnit);
                 i++;
-            }
-
-            //ConcatSameUnits(derivedUnits);
-
+            }            
             for (int j = 0; j < 3; j++)
             {
                 var a = derivedUnits[j].Multiply(derivedUnits[j + 1]) as DerivedUnit;
                 Units.Instance.Add(a);
                 derivedUnits[j + 1] = a;
-                if (j == 2)
+                if (j == 2) {
                     q1.Unit = a.Name;
-            }
-            for (int j = 4; j < 7; j++)
-            {
-                var a = derivedUnits[j].Multiply(derivedUnits[j + 1]) as DerivedUnit;
-                Units.Instance.Add(a);
-                derivedUnits[j + 1] = a;
-                if (j == 6)
                     q2.Unit = a.Name;
-            }
-            //q1.Unit = derivedUnits[0].Name;
-            //q2.Unit = derivedUnits[1].Name;
+                }                                   
+            }            
+            
 
             if (quantity.SelectedOperation == "Add")
                 quantity.ResultQuantity = q1.Add(q2);
@@ -65,12 +55,6 @@ namespace Software.Controllers
             return View("Index", quantity);
         }
 
-        //private void ConcatSameUnits(List<DerivedUnit> DerivedUnits) {
-        //    foreach (var derivedUnit in DerivedUnits) {
-        //        var splitedName = derivedUnit.Name.Split('^');
-        //        if(splitedName[0].Length == 1) 
-        //    }
-
-        //}
+       
     }
 }
