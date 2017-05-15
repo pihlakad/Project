@@ -11,7 +11,6 @@ namespace Software.Controllers
         public ActionResult Index() {
             return View();
         }
-        [Authorize(Roles = "Admin")]
 
         public ActionResult About()
         {
@@ -19,7 +18,6 @@ namespace Software.Controllers
 
             return View();
         }
-        [Authorize]
 
         public ActionResult Contact()
         {
