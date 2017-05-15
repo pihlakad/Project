@@ -12,12 +12,13 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
+                
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Pihlakad", "HomePage", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Pihlakad", "HomePage", "Home", new {area = ""}, new {@class = "navbar-brand"})
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -37,6 +38,11 @@
     <hr/>
     <footer>
         <p>&copy; @DateTime.Now.Year - Pihlakad</p>
+        Circle graphic by <a href="http://www.flaticon.com/authors/freepik">freepik</a>
+        from <a href="http://www.flaticon.com/">Flaticon</a> is licensed under
+        <a href="http://creativecommons.org/licenses/by/3.0/"
+           title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with
+        <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a>
     </footer>
 </div>
 
