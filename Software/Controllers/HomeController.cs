@@ -8,10 +8,10 @@ namespace Software.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
+        public ActionResult Index() {
             return View();
         }
+        [Authorize(Roles = "Admin")]
 
         public ActionResult About()
         {
@@ -19,6 +19,7 @@ namespace Software.Controllers
 
             return View();
         }
+        [Authorize]
 
         public ActionResult Contact()
         {

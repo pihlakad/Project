@@ -64,6 +64,8 @@ namespace Software.Models
 
     public class RegisterViewModel
     {
+        public string Name { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
