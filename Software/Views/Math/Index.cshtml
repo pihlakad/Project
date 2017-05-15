@@ -1,39 +1,70 @@
-﻿@model Software.ViewModel.QuantityViewModel
+﻿@model Software.ViewModel.MathViewModel
+@using System.Web.UI.WebControls
 @using Software.Extentions
 @using Software.ViewModel
 
 <script src="~/Scripts/ShowItems.js"></script>
 <h2>Quantity Details</h2>
 
-
-    @using (Html.BeginForm("Result", "Math", FormMethod.Post))
-    {
-        <div class="form-horizontal">
-            <div class="form-group" onclick="ShowInputElement()">
-                Select Operation:
-                @Html.DropDownListFor(t => t.SelectedOperation, new SelectList(HtmlLists.Operations, "operationName"),
-               new { id = "OperationDropDown" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(t => t.Measure)
-                @Html.TextBoxFor(t => t.Measure)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(c => c.QuantityList[0].Amount)
-                @Html.TextBoxFor(x => x.QuantityList[0].Amount)
-                @Html.LabelFor(c => c.QuantityList[0].Unit)
-                @Html.TextBoxFor(x => x.QuantityList[0].Unit)
-            </div>
-            <div id="SecondQuantity" class="form-group">
-                @Html.LabelFor(c => c.QuantityList[1].Amount)
-                @Html.TextBoxFor(x => x.QuantityList[1].Amount)
-                @Html.LabelFor(c => c.QuantityList[1].Unit)
-                @Html.TextBoxFor(x => x.QuantityList[1].Unit)
-            </div>
-            <button type="submit" value="Calcualte" onclick="ShowResult()">Calculate</button>
-        </div>
+<style>
+    .textings {
+        float: left;
+        margin: 5px 2px 10px 0;
     }
-    <label id="ResultLabel">
-        Result : @Model.ResultAmount @Model.ResultQuantity.Unit
-    </label>
+
+    .labels {
+        float: left;
+        margin: 5px 2px 10px 0;
+        width: 130px;
+        text-align: right;
+    }
+  
+</style>
+
+
+@using (Html.BeginForm("Result", "Math", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <div class="form-group" onclick="ShowInputElement()">
+            Select Operation:
+            @Html.DropDownListFor(t => t.SelectedOperation, new SelectList(HtmlLists.Operations, "operationName"),
+               new { id = "OperationDropDown" })
+        </div>
+        <div class="form-group" style="overflow-scrolling: auto">
+            <h4>  <label class="control-label labels">Measure:</label></h4>
+            <input type="text" class="form-control" id="inputDefault"
+                   @Html.TextBoxFor(t => t.Measure)
+        </div>
+
+        <div class="form-group" style="overflow-scrolling: auto" >
+            <h4> <label class="control-label labels">Amount:</label></h4>
+            <input type="text" class="form-control" id="FirstQuantity"
+                   @Html.TextBoxFor(x => x.QuantityList[0].Amount, new {Style = "width:80px"})
+            <h4> <label class="control-label labels">Unit:</label></h4>
+            <input type="text" class="form-control" id="FirstUnit"
+                   @Html.TextBoxFor(x => x.QuantityList[0].Unit, new {Style = "width:80px"})
+        </div>
+
+        <div class="form-group" style="overflow-scrolling: auto">
+            <h4> <label class="control-label labels">Amount:</label></h4>
+            <input type="text"id="SecondQuantity" class="form-control"
+                   @Html.TextBoxFor(x => x.QuantityList[1].Amount, new {Style = "width:80px"})
+                     <h4> <label class="control-label labels">Unit:</label></h4>
+            <input type="text"id="SecondUnit" class="form-control"
+                   @Html.TextBoxFor(x => x.QuantityList[1].Unit, new {Style = "width:80px"})
+        </div>
+        <button class="btn btn-primary" type="submit" value="Calcualte" onclick="ShowResult()">Calculate</button>
+    </div>
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4 class="panel-title">Here you go</h4>
+    </div>
+    <div class="panel-body" margin= 5px 2px 10px 0>
+        <label id="ResultLabel">
+            Result : @Model.ResultAmount @Model.ResultQuantity.Unit
+        </label>
+    </div>
+</div>
+
 
