@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -76,7 +77,7 @@ namespace Software.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.LoginUsername, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -149,12 +150,24 @@ namespace Software.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+            if (ModelState.IsValid) {
+                var user = new ApplicationUser
                 {
+                    UserName = model.Username,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Country = model.Country,
+                    BirthDate = model.BirthDate,
+                    JoinDate = DateTime.Now,
+                    EmailLinkDate=DateTime.Now,
+                    LastLoginDate = DateTime.Now
+                };
+                var result = await UserManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded) {
+                    UserManager.AddToRole(user.Id, "Guest");
+
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -481,5 +494,32 @@ namespace Software.Controllers
             }
         }
         #endregion
+
+
+        public static IEnumerable<SelectListItem> GetCountries()
+        {
+            RegionInfo country = new RegionInfo(new CultureInfo("en-US", false).LCID);
+            List<SelectListItem> countryNames = new List<SelectListItem>();
+            string cult = CultureInfo.CurrentCulture.EnglishName;
+            string count = cult.Substring(cult.IndexOf('(') + 1,
+                             cult.LastIndexOf(')') - cult.IndexOf('(') - 1);
+            //To get the Country Names from the CultureInfo installed in windows
+            foreach (CultureInfo cul in CultureInfo.GetCultures(CultureTypes.SpecificCultures))
+            {
+                country = new RegionInfo(new CultureInfo(cul.Name, false).LCID);
+                countryNames.Add(new SelectListItem()
+                {
+                    Text = country.DisplayName,
+                    Value = country.DisplayName,
+                    Selected = count == country.EnglishName
+                });
+            }
+            //Assigning all Country names to IEnumerable
+            IEnumerable<SelectListItem> nameAdded =
+                countryNames.GroupBy(x => x.Text).Select(
+                    x => x.FirstOrDefault()).ToList<SelectListItem>()
+                    .OrderBy(x => x.Text);
+            return nameAdded;
+        }
     }
 }

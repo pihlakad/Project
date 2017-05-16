@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Software.Models
@@ -49,9 +50,8 @@ namespace Software.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Username")]
+        public string LoginUsername { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,7 +64,11 @@ namespace Software.Models
 
     public class RegisterViewModel
     {
-        public string Name { get; set; }
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be atleast {2} characters long.", MinimumLength = 6)]
+        [RegularExpression("^([a-zA-Z0-9]{5,20})$", ErrorMessage = "The {0} must contain only alphanumeric characters")]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
 
         [Required]
         [EmailAddress]
@@ -81,6 +85,22 @@ namespace Software.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "Country")]
+        public string Country { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "BirthDate (MM/dd/yyyy)")]
+        public DateTime BirthDate { get; set; }
     }
 
     public class ResetPasswordViewModel
