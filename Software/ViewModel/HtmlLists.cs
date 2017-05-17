@@ -11,6 +11,8 @@ namespace Software.ViewModel
         public static IEnumerable<string> Operations = new List<string> {
             "Add", "Subtract", "Multiply", "Divide", "Compare", "Round"
         };
-       
+        public static IEnumerable<string> Numbers = new List<string> {
+            "1","2","3","4","5"
+        };
     }
   }
