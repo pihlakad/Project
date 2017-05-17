@@ -17,10 +17,23 @@
         width: 130px;
         text-align: right;
     }
+  
+    .form-group {
+        overflow-scrolling: auto;
+    }
+   .form-inline {
+        overflow-scrolling: auto;
+    }
+   .panel-primary {
+       width: 230px;
+   }
+   .panel-heading {
+       width: 230px;
+   }
 </style>
 @using (Html.BeginForm("Result", "ComplexMath", FormMethod.Post))
 {        <body onload="ShowElements()">
-        <div class="btn btn-primary" onclick="ShowUnits()" style="color:black ">
+        <div class="btn btn-primary" onclick="ShowUnits()" style="color: black">
             Select Number of Units:
             @Html.DropDownListFor(t => t.NumberOfUnits,
             new SelectList(HtmlLists.Numbers, "numberName"),
@@ -76,27 +89,22 @@
             </div>
 
         </div>
-        <div class="form-group" style="overflow-scrolling: auto">
+        <div class="form-group">
             <h4>  <label class="control-label labels">First Amount:</label></h4>
             <input type="text" class="form-control" id="FirstQuantity"
                    @Html.TextBoxFor(t => t.FirstQuantity.Amount)
         </div>
-        <div class="form-group" style="overflow-scrolling: auto" id="SecondQuantity">
+        <div class="form-group" id="SecondQuantity">
             <h4>  <label class="control-label labels">Second Amount:</label></h4>
             <input type="text" class="form-control"
                    @Html.TextBoxFor(t => t.SecondQuantity.Amount)
         </div>
-        <button class="btn btn-primary" type="submit" value="Calcualte" style="color: black"
-                onclick="ShowResult()">
-            Calculate
-        </button>
+        <button class="btn btn-primary" type="submit" value="Calcualte" onclick="ShowResult()">Calculate</button>
     </body>
 }
-
-
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h4 class="panel-title" style="color: black">Here you go</h4>
+<div class="panel panel-primary" >
+    <div class="panel-heading" >
+        <h4 class="panel-title">Here you go</h4>
     </div>
     <div class="panel-body">
         <label id="ResultLabel">

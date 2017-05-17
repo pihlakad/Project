@@ -17,16 +17,21 @@
         width: 130px;
         text-align: right;
     }
+    .panel-primary {
+        width: 230px;
+    }
+    .page-heading {
+        width: 230px;
+    }
   
 </style>
 
 
 @using (Html.BeginForm("Result", "Math", FormMethod.Post))
 {
-    <body onload="ShowInputElement()">
-        <div class="form-horizontal">
-            <div class="form-group" onclick="ShowInputElement()">
-                Select Operation:
+    <body onload="ShowInputElement()"/>
+        <div class="btn btn-primary" onclick="ShowInputElement()" style="color: black">
+           Select Operation:
                 @Html.DropDownListFor(t => t.SelectedOperation, new SelectList(HtmlLists.Operations, "operationName"),
                 new { id = "OperationDropDown" })
             </div>
@@ -48,14 +53,13 @@
                        @Html.TextBoxFor(x => x.QuantityList[1].Unit, new { Style = "width:80px" })
             </div>
             <button class="btn btn-primary" type="submit" value="Calcualte" onclick="ShowResult()">Calculate</button>
-        </div>
-    </body>
+      
 }
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h4 class="panel-title">Here you go</h4>
     </div>
-    <div class="panel-body" margin= 5px 2px 10px 0>
+    <div class="panel-body">
         <label id="ResultLabel">
             Result : @Model.Result @Model.ResultQuantity.Unit
         </label>
