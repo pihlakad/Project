@@ -139,9 +139,9 @@ namespace Tests.LogicTests {
             var b = quantity3.Multiply(quantity1);
             var c = quantity1.Multiply(quantity2);
             Assert.AreEqual(80, a.Amount);
-            Assert.AreEqual("kilomeeter^2", a.Unit);
+            Assert.AreEqual("meeter*kilomeeter", a.Unit);
             Assert.AreEqual(80000000, b.Amount);
-            Assert.AreEqual("meeter^2", b.Unit);
+            Assert.AreEqual("kilomeeter*meeter", b.Unit);
             Assert.AreEqual(Quantity.Empty, c);
         }
 
@@ -151,9 +151,9 @@ namespace Tests.LogicTests {
             var b = quantity3.Divide(quantity1);
             var c = quantity1.Divide(quantity2);
             Assert.AreEqual(0.0005, a.Amount);
-            Assert.AreEqual("kilomeeter", a.Unit);
+            Assert.AreEqual("meeter*kilomeeter^-1", a.Unit);
             Assert.AreEqual(2000, b.Amount);
-            Assert.AreEqual("meeter", b.Unit);
+            Assert.AreEqual("kilomeeter*meeter^-1", b.Unit);
             Assert.AreEqual(Quantity.Empty, c);
         }
 

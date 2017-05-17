@@ -98,11 +98,11 @@ namespace Logic {
             var b = Convert(q.GetUnit);
             Unit u;
             if (q.GetUnit is DerivedUnit) {
-                var u1 = (DerivedUnit) b.GetUnit;
+                var u1 = (DerivedUnit) GetUnit;
                 var u2 = (DerivedUnit) q.GetUnit;
                 u = isDivide? u1.Divide(u2) : u1.Multiply(u2);
             } else {
-                var u1 = (BaseUnit)b.GetUnit;
+                var u1 = (BaseUnit) GetUnit;
                 var u2 = (BaseUnit) q.GetUnit;                         
                 u = isDivide ? u1.Divide(u2) : u1.Multiply(u2);
             }
