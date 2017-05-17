@@ -14,5 +14,8 @@ namespace Software.ViewModel
         public static IEnumerable<string> Numbers = new List<string> {
             "1","2","3","4","5"
         };
+        public static IEnumerable<string> SimpleOperations = new List<string> {
+            "Divide", "Multiply"
+        };
     }
   }
