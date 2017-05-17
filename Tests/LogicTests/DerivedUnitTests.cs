@@ -86,9 +86,9 @@ namespace Tests.LogicTests
             var s = d2.Multiply(d3);
             var d = d1.Multiply(d2);
             Assert.AreEqual("pk^1*ae^2*mi^1", q.Measure.Name);
-            Assert.AreEqual("s^1*t^2*k^1", q.Formula());
-            Assert.AreEqual("s^1*k^2*t^1", s.Formula());
-            Assert.AreEqual("s^2*t^1*k^1", d.Formula());
+            Assert.AreEqual("s*t^2*k", q.Formula());
+            Assert.AreEqual("s*k^2*t", s.Formula());
+            Assert.AreEqual("s^2*t*k", d.Formula());
         }
 
         [TestMethod]
@@ -104,8 +104,8 @@ namespace Tests.LogicTests
             var q = d1.Divide(d3);
             var s = d1.Divide(d2);
             Assert.AreEqual("pk^1*mi^-1", q.Measure.Name);
-            Assert.AreEqual("s^1*k^-1", q.Formula());
-            Assert.AreEqual("t^1*k^-1", s.Formula());
+            Assert.AreEqual("s*k^-1", q.Formula());
+            Assert.AreEqual("t*k^-1", s.Formula());
         }
 
         [TestMethod]

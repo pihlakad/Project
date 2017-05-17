@@ -41,7 +41,7 @@ namespace Logic
         public string Formula(bool isLong = false)
         {
             var n = isLong ? Unit.Name : Unit.Symbol;
-            if (Power == 0) return $"{n}";
+            if (Power == 1|| Power == 0) return $"{n}";
             return $"{n}^{Power}";
         }
 

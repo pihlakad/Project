@@ -19,9 +19,9 @@ namespace Logic{
         {
             if (i == 0) return Empty;
             UnitTerm t1;
-            if (i == 1)
-                t1 = new UnitTerm(this);
-            else
+            //if (i == 1)
+            //    t1 = new UnitTerm(this);
+            //else
                 t1 = new UnitTerm(this, i);
             var t = new UnitTerms {t1};
             var a = new DerivedUnit(t);

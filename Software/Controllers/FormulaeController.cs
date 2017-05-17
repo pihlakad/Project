@@ -66,6 +66,7 @@ namespace Software.Controllers
                 var a = derivedUnits[j].Multiply(derivedUnits[j + 1]) as DerivedUnit;
                 Units.Instance.Add(a);
                 derivedUnits[j + 1] = a;
+                if (a.Name == null) a.Name = "1";
                 if (j == formulae.NumberOfUnits1 + formulae.NumberOfUnits2 - 2)
                     formulae.Result ="Unit: " + a.Name +" Measure: " + derivedMeasure.Name??derivedMeasure.Terms[0].MeasureId;
             }

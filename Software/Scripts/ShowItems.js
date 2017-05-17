@@ -93,3 +93,7 @@ function ShowUnits2() {
     }
 }
 
+function ShowGeneratorElements() {
+    ShowUnits();
+    ShowUnits2();
+}

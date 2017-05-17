@@ -46,8 +46,8 @@ namespace Tests.LogicTests
             Units.Instance.Add(u1);
             Units.Instance.Add(u2);            
             var u = u1.Multiply(u2);
-            Assert.AreEqual("s^1*t^1", u.Formula());
-            Assert.AreEqual("pikkus^1*aeg^1", u.Formula(true));
+            Assert.AreEqual("s*t", u.Formula());
+            Assert.AreEqual("pikkus*aeg", u.Formula(true));
             Assert.AreEqual("a^2", u.Measure.Name);
         }
 
@@ -88,9 +88,9 @@ namespace Tests.LogicTests
             Units.Instance.Add(u1);
             Units.Instance.Add(u2);
             var u = u1.Divide(u2);
-            Assert.AreEqual("s^1*t^-1", u.Formula());
+            Assert.AreEqual("s*t^-1", u.Formula());
             Assert.AreEqual("a^1*b^-1", u.Measure.Name);
-            Assert.AreEqual("pikkus^1*aeg^-1", u.Formula(true));
+            Assert.AreEqual("pikkus*aeg^-1", u.Formula(true));
         }
 
         protected override BaseUnit getRandomObj() {
