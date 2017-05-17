@@ -1,4 +1,5 @@
 ﻿@model ComplexMathViewModel
+@using System.Web.Services.Description
 @using Software.ViewModel
 
 <script src="~/Scripts/ShowItems.js"></script>
@@ -17,6 +18,7 @@
         width: 130px;
         text-align: right;
     }
+
 </style>
 @using (Html.BeginForm("Result", "ComplexMath", FormMethod.Post))
 {   
@@ -27,13 +29,18 @@
             new {id = "OperationDropDown"})
         
     </div>
-
+   
     <div class="form-group" style="overflow-scrolling: auto">
         <h4>  <label class="control-label labels">Measure:</label></h4>
         <Input type="text" class="form-control" id="inputDefault"
                @Html.TextBoxFor(t => t.Measure)/>
 
-    </div>           
+    </div> 
+       <div class="form-group" style="overflow-scrolling: auto">
+        <h4>  <label class="control-label labels">First Amount:</label></h4>
+        <input type="text" class="form-control" id="FirstQuantity"
+               @Html.TextBoxFor(t => t.FirstQuantity.Amount) />
+    </div>
         <div class="form-inline" style="overflow: auto">
             <h4> <label class="control-label labels">Unit:</label></h4>                    
             <input type="text" class="form-control" id="FirstUnit"
@@ -50,34 +57,58 @@
                        *
                 <input type="text" class="form-control" id="ThirdUnit"
                        @Html.TextBoxFor(x => x.UnitList[2], new {style = "width:50px"})/>
-                       ^
-                <input type="text" class="form-control" 
-                       @Html.TextBoxFor(x => x.PowerList[2], new {style = "width:50px"})/>
-                       *
-                <input type="text" class="form-control" id="FourthUnit"
-                       @Html.TextBoxFor(x => x.UnitList[3], new {style = "width:50px"})/>
-                       ^
-             <input type="text" class="form-control" 
-                      @Html.TextBoxFor(x => x.PowerList[3], new {style = "width:50px"})/>
+            ^
+            <input type="text" class="form-control" 
+                   @Html.TextBoxFor(x => x.PowerList[2], new {style = "width:50px"})/>
+            *
+            <input type="text" class="form-control" id="FourthUnit"
+                   @Html.TextBoxFor(x => x.UnitList[3], new {style = "width:50px"})/>
+            ^
+            <input type="text" class="form-control" 
+                   @Html.TextBoxFor(x => x.PowerList[3], new {style = "width:50px"})/>
         </div>
-    <div class="form-group" style="overflow-scrolling: auto">
-        <h4>  <label class="control-label labels">First Amount:</label></h4>
-        <input type="text" class="form-control" id="FirstQuantity"
-               @Html.TextBoxFor(t => t.FirstQuantity.Amount) />
-    </div>
+ 
     <div class="form-group" style="overflow-scrolling: auto">
         <h4>  <label class="control-label labels">Second Amount:</label></h4>
         <input type="text" class="form-control" id="FirstQuantity"
-               @Html.TextBoxFor(t => t.SecondQuantity.Amount) />
+              
+               @Html.TextBoxFor(t => t.SecondQuantity.Amount) /> 
+        <div class="form-inline" style="overflow: auto">
+            <h4> <label class="control-label labels">Unit:</label></h4>
+            <input type="text" class="form-control" id="FirstUnit"
+                   @Html.TextBoxFor(x => x.UnitList[0], new { style = "width:50px" }) />
+            ^
+            <input type="text" class="form-control"
+                   @Html.TextBoxFor(x => x.PowerList[0], new { style = "width:50px" }) />
+            *
+            <input type="text" class="form-control" id="SecondUnit"
+                   @Html.TextBoxFor(x => x.UnitList[1], new { style = "width:50px" }) />
+            ^
+            <input type="text" class="form-control"
+                   @Html.TextBoxFor(x => x.PowerList[1], new { style = "width:50px" }) />
+            *
+            <input type="text" class="form-control" id="ThirdUnit"
+                   @Html.TextBoxFor(x => x.UnitList[2], new { style = "width:50px" }) />
+            ^
+            <input type="text" class="form-control"
+                   @Html.TextBoxFor(x => x.PowerList[2], new { style = "width:50px" }) />
+            *
+            <input type="text" class="form-control" id="FourthUnit"
+                   @Html.TextBoxFor(x => x.UnitList[3], new { style = "width:50px" }) />
+            ^
+            <input type="text" class="form-control"
+                   @Html.TextBoxFor(x => x.PowerList[3], new { style = "width:50px" }) />
+        </div>
+      
     </div>
-    <button  class="btn btn-primary" type="submit" value="Calcualte" style="color: black"
+    <button  class="btn btn-primary" type="submit" value="Calcualte"
              onclick="ShowResult()">Calculate</button>
             }
-<div class="panel panel-primary">
+<div class="panel panel-primary" >
     <div class="panel-heading">
-        <h4 class="panel-title" style="color: black">Here you go</h4>
+        <h4 class="panel-title">Here you go</h4>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" >
         <label id="ResultLabel">
             Result : @Model.ResultQuantity.Amount @Model.ResultQuantity.Unit
         </label>
