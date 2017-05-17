@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Logic;
 
 namespace Software.ViewModel
@@ -7,7 +8,7 @@ namespace Software.ViewModel
         private List<Quantity> quantityList;
         private Quantity resultQuantity = Quantity.Empty;        
         private string selectedOperation;
-
+        
         public List<Quantity> QuantityList {
             get { return quantityList; }
             set { quantityList = value; }
