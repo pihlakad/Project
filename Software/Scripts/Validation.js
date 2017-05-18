@@ -28,8 +28,8 @@ function IsSecondUnitInValid() {
 }
 
 function ContainsPrefix(i) {
-    var firstLetter = i.Substring(0, 1);
-    var secondLetter = i.Substring(1, 2);    
+    var firstLetter = i.slice(0, 1);
+    var secondLetter = i.slice(1, 2);    
     if (firstLetter === "c") return false;
     if (firstLetter === "d" && secondLetter === "a") return false;
     if (firstLetter === "d") return false;
